@@ -1,4 +1,9 @@
-"""LangChain-compatible prompt-level failure-probability scoring."""
+"""LangChain-compatible prompt-level token-confidence scoring.
+
+This module does not implement the HIP-LLM operational-profile calculation.
+Use :class:`HIPLLM.OperationalFailureProb` with labelled benchmark outcomes for
+an operational-profile-weighted probability of failure.
+"""
 
 from __future__ import annotations
 
@@ -56,7 +61,9 @@ def _extract_token_logprobs(response: Any) -> np.ndarray:
     try:
         values = np.asarray([_candidate_logprob(entry) for entry in entries], dtype=float)
     except (TypeError, ValueError) as exc:
-        raise LogprobsUnavailableError("The model returned malformed token log probabilities") from exc
+        raise LogprobsUnavailableError(
+            "The model returned malformed token log probabilities"
+        ) from exc
     if values.ndim != 1 or values.size == 0 or not np.all(np.isfinite(values)):
         raise LogprobsUnavailableError("The model returned empty or non-finite log probabilities")
     if np.any(values > 1e-9):
@@ -67,13 +74,17 @@ def _extract_token_logprobs(response: Any) -> np.ndarray:
 
 
 class FailureProb:
-    """Generate LangChain responses and estimate prompt-level failure probability.
+    """Generate responses and calculate prompt-level token-confidence heuristics.
 
     The supported confidence scorers are ``min_probability`` (the least likely
     generated token) and ``sequence_probability`` (the geometric mean token
-    probability). Their failure-probability estimate is ``1 - confidence``.
-    These are token-confidence heuristics, not calibrated probabilities of factual
-    error; calibration should be performed against task-specific labelled data.
+    probability). Their transformed score is ``1 - confidence``.
+
+    This class does **not** use an operational profile and its transformed score
+    is not, by itself, a calibrated probability that the answer is wrong. For a
+    benchmark-level probability of failure under an explicit workload profile,
+    collect binary correctness outcomes and use
+    :class:`HIPLLM.OperationalFailureProb`.
 
     Parameters
     ----------
@@ -127,7 +138,7 @@ class FailureProb:
         raise TypeError("each prompt must be a non-empty string or a non-empty message sequence")
 
     async def generate_and_score(self, prompts: Sequence[Any]) -> FailureProbResult:
-        """Generate one response per prompt and calculate the selected scores."""
+        """Generate one response per prompt and calculate the selected heuristics."""
         if not isinstance(prompts, Sequence) or isinstance(prompts, (str, bytes)) or not prompts:
             raise ValueError("prompts must be a non-empty sequence")
 
@@ -149,7 +160,9 @@ class FailureProb:
         }
         confidence: dict[str, list[float]] = {}
         if "min_probability" in self.scorers:
-            confidence["min_probability"] = [float(math.exp(values.min())) for values in token_logprobs]
+            confidence["min_probability"] = [
+                float(math.exp(values.min())) for values in token_logprobs
+            ]
         if "sequence_probability" in self.scorers:
             confidence["sequence_probability"] = [
                 float(math.exp(values.mean())) for values in token_logprobs
@@ -174,5 +187,8 @@ class FailureProb:
                 "model": str(model_name),
                 "scorers": list(self.scorers),
                 "failure_transform": "1 - confidence",
+                "estimate_type": "token_confidence_heuristic",
+                "uses_operational_profile": False,
+                "calibration_required_for_error_probability": True,
             },
         )
