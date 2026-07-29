@@ -1,0 +1,54 @@
+name: Dependency Graph
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - pyproject.toml
+      - uv.lock
+      - requirements*.txt
+      - .github/workflows/dependency-graph.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - pyproject.toml
+      - uv.lock
+      - requirements*.txt
+      - .github/workflows/dependency-graph.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependencies-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dependency-review:
+    name: Review dependency changes
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/dependency-review-action@v4
+
+  dependency-snapshot:
+    name: Export locked dependency graph
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - name: Export runtime dependencies
+        run: uv export --frozen --no-dev --format requirements-txt --output-file dependency-graph.txt
+      - name: Upload dependency snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-graph
+          path: dependency-graph.txt
+          if-no-files-found: error
+          retention-days: 30
