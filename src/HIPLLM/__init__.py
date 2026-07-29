@@ -12,6 +12,12 @@ from .operational_failure import (
     quick_inference_settings,
 )
 from .results import FailureProbResult
+from .strategyqa import (
+    StrategyQALoadError,
+    decomposition_stratum,
+    load_strategyqa,
+    parse_strategyqa_answer,
+)
 
 try:
     __version__ = version("HIPLLM")
@@ -24,7 +30,11 @@ __all__ = [
     "LogprobsUnavailableError",
     "OperationalFailureProb",
     "OperationalFailureResult",
+    "StrategyQALoadError",
+    "decomposition_stratum",
+    "load_strategyqa",
     "paper_inference_settings",
+    "parse_strategyqa_answer",
     "quick_inference_settings",
     "__version__",
 ]
