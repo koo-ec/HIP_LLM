@@ -5,10 +5,10 @@ build:
   tools:
     python: "3.11"
   jobs:
-    post_checkout:
-      - curl -LsSf https://astral.sh/uv/install.sh | sh
+    pre_install:
+      - python -m pip install --disable-pip-version-check uv==0.12.0
     post_install:
-      - UV_PROJECT_ENVIRONMENT="$READTHEDOCS_VIRTUALENV_PATH" "$HOME/.local/bin/uv" sync --frozen --group docs
+      - UV_PROJECT_ENVIRONMENT="$READTHEDOCS_VIRTUALENV_PATH" uv sync --frozen --group docs
 
 sphinx:
   configuration: docs/source/conf.py
