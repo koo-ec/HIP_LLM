@@ -1,0 +1,60 @@
+{
+  "name": "table1_framework_comparison",
+  "caption": "Paper Table 1 (verbatim reference)",
+  "columns": [
+    "aspect",
+    "Miller [32]",
+    "HiBayES [31]",
+    "HIP-LLM"
+  ],
+  "rows": [
+    {
+      "aspect": "Statistical framework",
+      "Miller [32]": "Frequentist",
+      "HiBayES [31]": "Bayesian",
+      "HIP-LLM": "Bayesian"
+    },
+    {
+      "aspect": "Primary goal",
+      "Miller [32]": "Uncertainty-aware benchmark reporting",
+      "HiBayES [31]": "Uncertainty-aware, hierarchical accuracy estimation",
+      "HIP-LLM": "Uncertainty-aware reliability assessment under OP with embedded priors"
+    },
+    {
+      "aspect": "Metric under estimation",
+      "Miller [32]": "Failure probability (per task)",
+      "HiBayES [31]": "Failure probability (per task)",
+      "HIP-LLM": "Reliability (probability of failure-free future tasks)"
+    },
+    {
+      "aspect": "OP",
+      "Miller [32]": "Implicit (dataset assumed representative)",
+      "HiBayES [31]": "Implicit (dataset assumed representative)",
+      "HIP-LLM": "Explicit, multi-level OPs"
+    },
+    {
+      "aspect": "Hierarchical structure",
+      "Miller [32]": "None",
+      "HiBayES [31]": "LLM, domains, subdomains",
+      "HIP-LLM": "LLM, domains, subdomains"
+    },
+    {
+      "aspect": "Dependence handling",
+      "Miller [32]": "Clustered standard errors",
+      "HiBayES [31]": "Partial pooling",
+      "HIP-LLM": "Partial pooling"
+    },
+    {
+      "aspect": "Prior specification",
+      "Miller [32]": "None",
+      "HiBayES [31]": "Uniform precise priors",
+      "HIP-LLM": "Informative imprecise priors (credal sets)"
+    },
+    {
+      "aspect": "Output",
+      "Miller [32]": "Confidence intervals",
+      "HiBayES [31]": "Single posterior distribution",
+      "HIP-LLM": "Posterior envelopes"
+    }
+  ]
+}

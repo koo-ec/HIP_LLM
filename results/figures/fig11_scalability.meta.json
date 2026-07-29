@@ -1,0 +1,20 @@
+{
+  "caption": "Empirical scalability of the HIP-LLM inference pipeline under controlled parameter sweeps, measured on this machine.",
+  "config_hash": "b16d8266b8eda3752442ea4416434b8cfabf09b0b9c3f149edd2f579da03dd1a",
+  "data_source": "measured on this machine (synthetic timing hierarchy)",
+  "extra": {
+    "hip_llm_version": "1.0.0",
+    "paper_reference_environment": "Google Colab, Intel Xeon @ 2.20 GHz, ~13 GB RAM",
+    "profile": "full",
+    "run_mode": "published_numerics",
+    "strict_exact": false
+  },
+  "figure_id": "Fig. 11",
+  "generated_utc": "2026-07-29T09:24:09+00:00",
+  "git_commit": "e9a1b36cbfd3c38bd7bb050467ea0a866abcf803",
+  "seeds": {
+    "configurations": 123,
+    "global": 7,
+    "llm_pairs": 999
+  }
+}

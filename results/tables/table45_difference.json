@@ -1,0 +1,156 @@
+{
+  "name": "table45_difference",
+  "caption": "printed - computed: not computable while RQ5 is blocked",
+  "columns": [
+    "table",
+    "op",
+    "method",
+    "difference"
+  ],
+  "rows": [
+    {
+      "table": "Table4",
+      "op": "OPdata",
+      "method": "BB-UnInf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPdata",
+      "method": "BB-Inf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPdata",
+      "method": "HiBayES",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPdata",
+      "method": "HIP-LLM",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPapprox",
+      "method": "BB-UnInf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPapprox",
+      "method": "BB-Inf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPapprox",
+      "method": "HiBayES",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPapprox",
+      "method": "HIP-LLM",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPGT",
+      "method": "BB-UnInf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPGT",
+      "method": "BB-Inf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPGT",
+      "method": "HiBayES",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table4",
+      "op": "OPGT",
+      "method": "HIP-LLM",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPdata",
+      "method": "BB-UnInf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPdata",
+      "method": "BB-Inf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPdata",
+      "method": "HiBayES",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPdata",
+      "method": "HIP-LLM",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPapprox",
+      "method": "BB-UnInf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPapprox",
+      "method": "BB-Inf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPapprox",
+      "method": "HiBayES",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPapprox",
+      "method": "HIP-LLM",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPGT",
+      "method": "BB-UnInf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPGT",
+      "method": "BB-Inf",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPGT",
+      "method": "HiBayES",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    },
+    {
+      "table": "Table5",
+      "op": "OPGT",
+      "method": "HIP-LLM",
+      "difference": "not computable (see table_rq5_blocking_checklist)"
+    }
+  ]
+}

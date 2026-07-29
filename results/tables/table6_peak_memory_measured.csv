@@ -1,0 +1,6 @@
+swept_parameter,range,measured_peak_memory_mb,measured_memory_exponent,paper_reference_mb,paper_note
+m,1 -> 12,29.4 -> 255.7,0.829,24.6 -> 146.7,approximately linear
+n_bar,2 -> 40,71.9 -> 350.2,0.528,35.8 -> 314.2,approximately linear
+S,500 -> 6000,12.1 -> 143.7,0.995,7.6 -> 69.4,approximately linear
+K,40 -> 320,44.4 -> 108.7,0.429,19.1 -> 57.8,approximately linear
+G,1000 -> 4500,71.9 -> 71.9,-0.0,35.7 -> 35.7,effectively constant (grid reused across configurations)

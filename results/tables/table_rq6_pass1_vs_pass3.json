@@ -1,0 +1,51 @@
+{
+  "name": "table_rq6_pass1_vs_pass3",
+  "caption": "RQ6: Pass@1 vs Pass@3 envelope summaries (aggregate reproduction)",
+  "columns": [
+    "success_definition",
+    "N",
+    "C",
+    "C_over_N",
+    "median_lower",
+    "median_upper",
+    "q05_lower",
+    "q05_upper",
+    "q95_lower",
+    "q95_upper",
+    "envelope_area",
+    "max_cdf_separation",
+    "n_configs"
+  ],
+  "rows": [
+    {
+      "success_definition": "Pass@1",
+      "N": 257,
+      "C": 121,
+      "C_over_N": 0.4708171206,
+      "median_lower": 0.4666562114,
+      "median_upper": 0.4760862256,
+      "q05_lower": 0.4144456551,
+      "q05_upper": 0.4246036856,
+      "q95_lower": 0.5178915527,
+      "q95_upper": 0.5269183144,
+      "envelope_area": 0.00916,
+      "max_cdf_separation": 0.1163333333,
+      "n_configs": 160
+    },
+    {
+      "success_definition": "Pass@3",
+      "N": 257,
+      "C": 127,
+      "C_over_N": 0.4941634241,
+      "median_lower": 0.4891793407,
+      "median_upper": 0.4992288812,
+      "q05_lower": 0.4375756847,
+      "q05_upper": 0.4472876512,
+      "q95_lower": 0.5402832072,
+      "q95_upper": 0.5499649842,
+      "envelope_area": 0.0094966667,
+      "max_cdf_separation": 0.1206666667,
+      "n_configs": 160
+    }
+  ]
+}

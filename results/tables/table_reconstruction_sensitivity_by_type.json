@@ -1,0 +1,21 @@
+{
+  "name": "table_reconstruction_sensitivity_by_type",
+  "caption": "Worst-case shift attributable to each unresolved reconstruction",
+  "columns": [
+    "reconstruction",
+    "max_median_shift",
+    "max_cdf_sup"
+  ],
+  "rows": [
+    {
+      "reconstruction": "config_sampling",
+      "max_median_shift": 0.0102170387,
+      "max_cdf_sup": 0.1766666667
+    },
+    {
+      "reconstruction": "nu_grid_scheme",
+      "max_median_shift": 0.0002115434,
+      "max_cdf_sup": 0.0333333333
+    }
+  ]
+}

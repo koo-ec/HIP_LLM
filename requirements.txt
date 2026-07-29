@@ -1,2 +1,7 @@
-pandas>=2.0
+# Runtime dependencies. For development and testing, prefer:
+#   python -m pip install -e ".[test,profile]"
+numpy>=2.0
+pandas>=2.2
+matplotlib>=3.10
+scipy>=1.11
 PyYAML>=6.0

@@ -1,0 +1,21 @@
+{
+  "name": "table_rq8_stage_breakdown",
+  "caption": "RQ8: baseline stage timing breakdown",
+  "columns": [
+    "stage",
+    "seconds",
+    "percent"
+  ],
+  "rows": [
+    {
+      "stage": "Subdomain posteriors",
+      "seconds": 1.4194839,
+      "percent": 59.6943078489
+    },
+    {
+      "stage": "Domain/LLM envelopes",
+      "seconds": 0.9584378,
+      "percent": 40.3056921511
+    }
+  ]
+}

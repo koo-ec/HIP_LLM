@@ -1,0 +1,46 @@
+{
+  "name": "table_D11_corner_vs_random_envelope",
+  "caption": "D11: corner-based vs random configuration sets (GPT-4o, LLM level)",
+  "columns": [
+    "configuration set",
+    "K",
+    "median lo",
+    "median hi",
+    "q05 lo",
+    "q95 hi",
+    "envelope area",
+    "median envelope width"
+  ],
+  "rows": [
+    {
+      "configuration set": "16 box corners only",
+      "K": 16,
+      "median lo": 0.8156994724,
+      "median hi": 0.8596239038,
+      "q05 lo": 0.7746266738,
+      "q95 hi": 0.8876976387,
+      "envelope area": 0.0439483333,
+      "median envelope width": 0.0439244314
+    },
+    {
+      "configuration set": "160 uniform draws (as configured)",
+      "K": 160,
+      "median lo": 0.8298499962,
+      "median hi": 0.8557217044,
+      "q05 lo": 0.7905863891,
+      "q95 hi": 0.8852899713,
+      "envelope area": 0.0262016667,
+      "median envelope width": 0.0258717082
+    },
+    {
+      "configuration set": "160 corners + interior",
+      "K": 160,
+      "median lo": 0.8196329575,
+      "median hi": 0.8581262484,
+      "q05 lo": 0.7772937352,
+      "q95 hi": 0.88567268,
+      "envelope area": 0.0386466667,
+      "median envelope width": 0.0384932908
+    }
+  ]
+}

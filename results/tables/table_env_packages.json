@@ -1,0 +1,84 @@
+{
+  "name": "table_env_packages",
+  "caption": "Installed vs paper-reported packages",
+  "columns": [
+    "package",
+    "installed",
+    "paper_reported",
+    "matches_paper"
+  ],
+  "rows": [
+    {
+      "package": "numpy",
+      "installed": "2.5.1",
+      "paper_reported": "2.0.2",
+      "matches_paper": false
+    },
+    {
+      "package": "scipy",
+      "installed": "1.18.0",
+      "paper_reported": "not reported by the paper",
+      "matches_paper": false
+    },
+    {
+      "package": "pandas",
+      "installed": "2.2.3",
+      "paper_reported": "2.2.2",
+      "matches_paper": false
+    },
+    {
+      "package": "matplotlib",
+      "installed": "3.10.7",
+      "paper_reported": "3.10.0",
+      "matches_paper": false
+    },
+    {
+      "package": "yaml",
+      "installed": "6.0.2",
+      "paper_reported": "not reported by the paper",
+      "matches_paper": false
+    },
+    {
+      "package": "pytest",
+      "installed": "9.1.1",
+      "paper_reported": "not reported by the paper",
+      "matches_paper": false
+    },
+    {
+      "package": "papermill",
+      "installed": "2.7.0",
+      "paper_reported": "not reported by the paper",
+      "matches_paper": false
+    },
+    {
+      "package": "nbformat",
+      "installed": "5.10.4",
+      "paper_reported": "not reported by the paper",
+      "matches_paper": false
+    },
+    {
+      "package": "psutil",
+      "installed": "7.1.3",
+      "paper_reported": "not reported by the paper",
+      "matches_paper": false
+    },
+    {
+      "package": "openai",
+      "installed": "1.60.2",
+      "paper_reported": "not reported by the paper",
+      "matches_paper": false
+    },
+    {
+      "package": "anthropic",
+      "installed": "0.45.2",
+      "paper_reported": "not reported by the paper",
+      "matches_paper": false
+    },
+    {
+      "package": "datasets",
+      "installed": "3.1.0",
+      "paper_reported": "not reported by the paper",
+      "matches_paper": false
+    }
+  ]
+}

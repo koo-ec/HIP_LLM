@@ -1,0 +1,36 @@
+{
+  "name": "table_rq2_effect_sizes",
+  "caption": "RQ2: how much each hyperparameter moves location vs width",
+  "columns": [
+    "hyperparameter",
+    "median_range",
+    "area_range",
+    "sep_range"
+  ],
+  "rows": [
+    {
+      "hyperparameter": "a",
+      "median_range": 0.0014906551,
+      "area_range": 0.00238,
+      "sep_range": 0.036
+    },
+    {
+      "hyperparameter": "b",
+      "median_range": 0.0009510179,
+      "area_range": 0.0011083333,
+      "sep_range": 0.017
+    },
+    {
+      "hyperparameter": "c",
+      "median_range": 0.0019313644,
+      "area_range": 0.0024266667,
+      "sep_range": 0.04
+    },
+    {
+      "hyperparameter": "d",
+      "median_range": 0.0092012419,
+      "area_range": 0.0169216667,
+      "sep_range": 0.2863333333
+    }
+  ]
+}

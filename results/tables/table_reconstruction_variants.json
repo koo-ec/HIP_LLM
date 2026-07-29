@@ -1,0 +1,78 @@
+{
+  "name": "table_reconstruction_variants",
+  "caption": "Posterior summaries per reconstruction variant",
+  "columns": [
+    "reconstruction",
+    "option",
+    "median lo",
+    "median hi",
+    "q05 lo",
+    "q95 hi",
+    "envelope area"
+  ],
+  "rows": [
+    {
+      "reconstruction": "nu_grid_scheme",
+      "option": "log",
+      "median lo": 0.8298499962,
+      "median hi": 0.8557217044,
+      "q05 lo": 0.7905863891,
+      "q95 hi": 0.8852899713,
+      "envelope area": 0.0262016667
+    },
+    {
+      "reconstruction": "nu_grid_scheme",
+      "option": "linear",
+      "median lo": 0.8296384528,
+      "median hi": 0.8544335177,
+      "q05 lo": 0.7906021162,
+      "q95 hi": 0.8828157477,
+      "envelope area": 0.024825
+    },
+    {
+      "reconstruction": "nu_grid_scheme",
+      "option": "gamma_quantile",
+      "median lo": 0.8297063547,
+      "median hi": 0.8557608953,
+      "q05 lo": 0.7910943036,
+      "q95 hi": 0.8852701706,
+      "envelope area": 0.0263283333
+    },
+    {
+      "reconstruction": "config_sampling",
+      "option": "uniform_random",
+      "median lo": 0.8298499962,
+      "median hi": 0.8557217044,
+      "q05 lo": 0.7905863891,
+      "q95 hi": 0.8852899713,
+      "envelope area": 0.0262016667
+    },
+    {
+      "reconstruction": "config_sampling",
+      "option": "latin_hypercube",
+      "median lo": 0.8320218332,
+      "median hi": 0.8560799854,
+      "q05 lo": 0.7940611784,
+      "q95 hi": 0.8850014337,
+      "envelope area": 0.023605
+    },
+    {
+      "reconstruction": "config_sampling",
+      "option": "sobol",
+      "median lo": 0.8340475651,
+      "median hi": 0.8564381786,
+      "q05 lo": 0.7945900933,
+      "q95 hi": 0.8847543578,
+      "envelope area": 0.0226916667
+    },
+    {
+      "reconstruction": "config_sampling",
+      "option": "interval_corners_plus_interior",
+      "median lo": 0.8196329575,
+      "median hi": 0.8581262484,
+      "q05 lo": 0.7772937352,
+      "q95 hi": 0.88567268,
+      "envelope area": 0.0386466667
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "table_source_discrepancies",
+  "caption": "All catalogued source discrepancies",
+  "columns": [
+    "id",
+    "severity",
+    "title",
+    "resolution"
+  ],
+  "rows": [
+    {
+      "id": "D1",
+      "severity": "high",
+      "title": "Paper Table 3 vs official repository figure numerics",
+      "resolution": "Keep both datasets. Figures use official_repo_accuracies; the literal Table 3 reproduction uses paper_table3. Never merged, never auto-swapped."
+    },
+    {
+      "id": "D2",
+      "severity": "medium",
+      "title": "Fig. 9 caption values conflict with both accuracy sources",
+      "resolution": "Treat Fig. 9 as a figure-specific experiment and use its captioned values for Fig. 9 only. Its partner subdomain (DS-1000) data is not stated by the caption; the reconstruction use"
+    },
+    {
+      "id": "D3",
+      "severity": "high",
+      "title": "Table 5 HIP-LLM rows are mathematically inconsistent",
+      "resolution": "Reproduce the printed table verbatim as a reference artifact, flag the two rows with an automated invariant test, and never treat those numbers as a numerical target for a correct "
+    },
+    {
+      "id": "D4",
+      "severity": "high",
+      "title": "Fig. 7 uses Table 3 values, contradicting the repository's 'all figures' claim",
+      "resolution": "Fig. 7 is reproduced from paper_table3 and Figs. 3-6, 8, 10 from official_repo_accuracies. The per-figure assignment is explicit in configs/paper_published_numerics.yaml :: figure_"
+    },
+    {
+      "id": "D5",
+      "severity": "low",
+      "title": "Table 3 printed LLM mean for GPT-4o disagrees with its own printed cells",
+      "resolution": "Reported as an internal inconsistency of the printed table; not used as an input."
+    },
+    {
+      "id": "D6",
+      "severity": "medium",
+      "title": "PERTURBATION 0.07 in settings.yaml vs +/-20% in the paper",
+      "resolution": "Recorded, and deliberately unused. hip_llm.operational_profile. perturb_and_renormalise takes the magnitude as an explicit argument and has no default."
+    },
+    {
+      "id": "D7",
+      "severity": "informational",
+      "title": "Editorial: 'five research questions' followed by RQ1-RQ8",
+      "resolution": "Recorded; no numerical impact."
+    },
+    {
+      "id": "D8",
+      "severity": "informational",
+      "title": "SciPy is required by this reproduction but is not a reported dependency",
+      "resolution": "SciPy is pinned in requirements-lock.txt and declared an implementation dependency of the reproduction, not of the original experiment."
+    },
+    {
+      "id": "D9",
+      "severity": "medium",
+      "title": "Table 2's imprecise posterior-mean interval does not follow from its own credal set",
+      "resolution": "Section 4 of the notebook computes the interval analytically from the printed credal set, reports [0.29, 0.43], and flags the printed [0.31, 0.38] as an inconsistent source artifac"
+    },
+    {
+      "id": "D10",
+      "severity": "medium",
+      "title": "Partial pooling is numerically inert under the paper's own baseline hyperprior box",
+      "resolution": "Reported as a finding about the paper's chosen configuration, not as an implementation defect. The dependence structure is preserved exactly (shared latent draws) and is verified b"
+    },
+    {
+      "id": "D11",
+      "severity": "high",
+      "title": "Random hyper-hyper-parameter sampling under-states the imprecise envelope",
+      "resolution": "All four candidate designs are implemented and compared in Section 6 of the notebook; none is presented as the authors' rule. The consequence is stated explicitly: reported envelop"
+    }
+  ]
+}

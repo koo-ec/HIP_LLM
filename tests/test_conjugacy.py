@@ -8,7 +8,6 @@ from __future__ import annotations
 import numpy as np
 import pytest
 from scipy import integrate, stats
-from scipy.special import betaln
 
 from conftest import TOL_MC_MEAN, TOL_MC_VAR
 from hip_llm.grids import build_grid

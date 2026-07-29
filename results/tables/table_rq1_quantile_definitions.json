@@ -1,0 +1,41 @@
+{
+  "name": "table_rq1_quantile_definitions",
+  "caption": "Q1 (envelope of quantiles, used everywhere) vs Q2 (quantiles of the CDF envelope)",
+  "columns": [
+    "model",
+    "Q1 median lo",
+    "Q1 median hi",
+    "Q2 median lo",
+    "Q2 median hi"
+  ],
+  "rows": [
+    {
+      "model": "GPT-4o",
+      "Q1 median lo": 0.8298499962,
+      "Q1 median hi": 0.8557217044,
+      "Q2 median lo": 0.83,
+      "Q2 median hi": 0.86
+    },
+    {
+      "model": "GPT-4o-mini",
+      "Q1 median lo": 0.7918186281,
+      "Q1 median hi": 0.817172538,
+      "Q2 median lo": 0.795,
+      "Q2 median hi": 0.82
+    },
+    {
+      "model": "Sonnet 4.5",
+      "Q1 median lo": 0.8432169704,
+      "Q1 median hi": 0.86951436,
+      "Q2 median lo": 0.845,
+      "Q2 median hi": 0.87
+    },
+    {
+      "model": "Haiku 3.5",
+      "Q1 median lo": 0.7921839778,
+      "Q1 median hi": 0.8178787919,
+      "Q2 median lo": 0.795,
+      "Q2 median hi": 0.82
+    }
+  ]
+}

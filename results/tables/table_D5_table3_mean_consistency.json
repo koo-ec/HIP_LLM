@@ -1,0 +1,36 @@
+{
+  "name": "table_D5_table3_mean_consistency",
+  "caption": "D5: Table 3 printed means vs its own cells",
+  "columns": [
+    "model",
+    "mean_of_printed_cells",
+    "printed_llm_mean",
+    "abs_diff"
+  ],
+  "rows": [
+    {
+      "model": "GPT-4o",
+      "mean_of_printed_cells": 0.588,
+      "printed_llm_mean": 0.585,
+      "abs_diff": 0.003
+    },
+    {
+      "model": "GPT-4o-mini",
+      "mean_of_printed_cells": 0.66,
+      "printed_llm_mean": 0.661,
+      "abs_diff": 0.001
+    },
+    {
+      "model": "Sonnet 4.5",
+      "mean_of_printed_cells": 0.67075,
+      "printed_llm_mean": 0.671,
+      "abs_diff": 0.00025
+    },
+    {
+      "model": "Haiku 3.5",
+      "mean_of_printed_cells": 0.668,
+      "printed_llm_mean": 0.668,
+      "abs_diff": 1.110223025e-16
+    }
+  ]
+}

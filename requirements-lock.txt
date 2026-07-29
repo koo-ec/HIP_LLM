@@ -1,0 +1,53 @@
+# Exact versions used for the recorded run of HIP_LLM_exact_replication.ipynb.
+#
+# PROVENANCE OF EACH PIN
+# ----------------------
+# The paper reports only Python 3.12.12, NumPy 2.0.2, pandas 2.2.2 and
+# matplotlib 3.10.0 (Section 4.2). Every other package below -- including SciPy,
+# which this replication needs for stable betaln/gammaln/logsumexp and for the
+# Beta/Gamma quantile functions -- is an IMPLEMENTATION DEPENDENCY OF THE
+# REPRODUCTION and is NOT reported by the paper. See provenance discrepancy D8.
+#
+# The recorded run used Python 3.13.1 rather than the paper's 3.12.12; the
+# notebook prints the resolved interpreter version and the deviation is recorded
+# in results/diagnostics/environment.json. environment.yml pins Python 3.12 for
+# anyone who wants to match the paper more closely.
+#
+#   pip install -r requirements-lock.txt
+
+# --- reported by the paper (pin these to the paper's versions if matching it) --
+numpy==2.5.1                # paper reports 2.0.2
+pandas==2.2.3               # paper reports 2.2.2
+matplotlib==3.10.7          # paper reports 3.10.0
+
+# --- required by this reproduction, NOT reported by the paper -----------------
+scipy==1.18.0
+PyYAML==6.0.2
+
+# --- test / execution harness -------------------------------------------------
+pytest==9.1.1
+pytest-timeout==2.4.0
+nbformat==5.10.4
+papermill==2.7.0
+ipykernel==7.1.0
+
+# --- optional: profiling ------------------------------------------------------
+psutil==7.1.3
+
+# --- optional: Mode B (live_api) only ----------------------------------------
+openai==1.60.2
+anthropic==0.45.2
+datasets==3.1.0
+
+# --- transitive pins captured from the recorded run ---------------------------
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.61.0
+kiwisolver==1.4.9
+packaging==25.0
+pillow==12.0.0
+pyparsing==3.2.5
+python-dateutil==2.9.0.post0
+pytz==2026.2
+six==1.17.0
+tzdata==2024.2

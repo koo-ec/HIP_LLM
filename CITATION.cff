@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated article."
+title: "HIP-LLM: A Hierarchical Imprecise Probability Approach to Reliability Assessment of Large Language Models"
+type: software
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/koo-ec/HIP_LLM"
+authors:
+  - family-names: "Aghazadeh Chakherlou"
+    given-names: "Robab"
+  - family-names: "Guo"
+    given-names: "Qing"
+  - family-names: "Khastgir"
+    given-names: "Siddartha"
+  - family-names: "Popov"
+    given-names: "Peter"
+  - family-names: "Zhang"
+    given-names: "Xiaoge"
+  - family-names: "Zhao"
+    given-names: "Xingyu"
+preferred-citation:
+  type: article
+  title: "A hierarchical imprecise probability approach to reliability assessment of large language models"
+  authors:
+    - family-names: "Aghazadeh-Chakherlou"
+      given-names: "Robab"
+    - family-names: "Guo"
+      given-names: "Qing"
+    - family-names: "Khastgir"
+      given-names: "Siddartha"
+    - family-names: "Popov"
+      given-names: "Peter"
+    - family-names: "Zhang"
+      given-names: "Xiaoge"
+    - family-names: "Zhao"
+      given-names: "Xingyu"
+  journal: "Reliability Engineering & System Safety"
+  volume: 272
+  year: 2026
+  start: "112615"
+  doi: "10.1016/j.ress.2026.112615"

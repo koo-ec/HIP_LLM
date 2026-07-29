@@ -1,0 +1,66 @@
+{
+  "name": "table_reconstruction_sensitivity",
+  "caption": "Sensitivity of GPT-4o p_L to the unresolved reconstruction choices",
+  "columns": [
+    "reconstruction",
+    "option",
+    "vs",
+    "d median lo",
+    "d median hi",
+    "d q05",
+    "d q95",
+    "CDF sup-norm"
+  ],
+  "rows": [
+    {
+      "reconstruction": "config_sampling",
+      "option": "latin_hypercube",
+      "vs": "uniform_random",
+      "d median lo": 0.0021718369,
+      "d median hi": 0.000358281,
+      "d q05": 0.0034747893,
+      "d q95": 0.0002885376,
+      "CDF sup-norm": 0.0623333333
+    },
+    {
+      "reconstruction": "config_sampling",
+      "option": "sobol",
+      "vs": "uniform_random",
+      "d median lo": 0.0041975689,
+      "d median hi": 0.0007164742,
+      "d q05": 0.0040037042,
+      "d q95": 0.0005356135,
+      "CDF sup-norm": 0.0773333333
+    },
+    {
+      "reconstruction": "config_sampling",
+      "option": "interval_corners_plus_interior",
+      "vs": "uniform_random",
+      "d median lo": 0.0102170387,
+      "d median hi": 0.002404544,
+      "d q05": 0.0132926539,
+      "d q95": 0.0003827087,
+      "CDF sup-norm": 0.1766666667
+    },
+    {
+      "reconstruction": "nu_grid_scheme",
+      "option": "linear",
+      "vs": "log",
+      "d median lo": 0.0002115434,
+      "d median hi": 0.0012881867,
+      "d q05": 1.5727e-05,
+      "d q95": 0.0024742236,
+      "CDF sup-norm": 0.0333333333
+    },
+    {
+      "reconstruction": "nu_grid_scheme",
+      "option": "gamma_quantile",
+      "vs": "log",
+      "d median lo": 0.0001436415,
+      "d median hi": 3.91909e-05,
+      "d q05": 0.0005079144,
+      "d q95": 1.98007e-05,
+      "CDF sup-norm": 0.0076666667
+    }
+  ]
+}

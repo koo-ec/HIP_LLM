@@ -1,0 +1,26 @@
+{
+  "name": "table_D2_fig9_conflict",
+  "caption": "D2: Fig. 9 captioned Pass@1 vs both accuracy sources",
+  "columns": [
+    "check",
+    "passed",
+    "detail"
+  ],
+  "rows": [
+    {
+      "check": "Fig. 9 Pass@1 (Sonnet 4.5/MBPP) agrees with paper Table 3",
+      "passed": false,
+      "detail": "caption 0.4710 vs paper Table 3 0.4500 (|diff| = 0.0210)"
+    },
+    {
+      "check": "Fig. 9 Pass@1 (Sonnet 4.5/MBPP) agrees with repository figure numerics",
+      "passed": false,
+      "detail": "caption 0.4710 vs repository figure numerics 0.4860 (|diff| = 0.0150)"
+    },
+    {
+      "check": "Fig. 9 N differs from the baseline effective N",
+      "passed": false,
+      "detail": "Fig. 9 uses N = 257; the baseline figures use N = 80"
+    }
+  ]
+}

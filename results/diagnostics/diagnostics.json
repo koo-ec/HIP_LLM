@@ -1,0 +1,51 @@
+{
+  "mode_a_runtime_s": 20.604318600002443,
+  "cache": {
+    "hits": 0,
+    "misses": 1280,
+    "hit_rate": 0.0,
+    "entries": 1280
+  },
+  "nu_grid_max_median_shift": 0.0012881866745589887,
+  "nu_grid_max_cdf_sup": 0.033333333333333326,
+  "nu_grid_principled_pair_cdf_sup": 0.0076666666666667105,
+  "config_sampling_max_median_shift": 0.010217038697607816,
+  "config_sampling_max_cdf_sup": 0.17666666666666664,
+  "corner_vs_random_area_ratio": 1.6773106036511674,
+  "rq8_omitted_sweeps": [],
+  "rq8_profile": "full",
+  "rq8_exponents": {
+    "m": 1.0874654183828665,
+    "n_bar": 0.617137595047062,
+    "S": 0.0909106831500851,
+    "K": 0.903173837304092,
+    "G": 0.3346937600680609
+  },
+  "rq8_exponents_offset_corrected": {
+    "m": 1.2761905937021358,
+    "n_bar": 1.0898091072609517,
+    "S": 0.0909106831500851,
+    "K": 0.903173837304092,
+    "G": 0.3346937600680609
+  },
+  "rq8_memory_exponents": {
+    "m": 0.829132313652953,
+    "n_bar": 0.5284443863836563,
+    "S": 0.9952843386845224,
+    "K": 0.42928503174197896,
+    "G": -1.6287883405252038e-05
+  },
+  "rq8_unresolvable_exponents": [
+    "n_bar",
+    "G"
+  ],
+  "rq8_low_dynamic_range": [
+    "S",
+    "G"
+  ],
+  "rq8_baseline_seconds": 2.377921700011939,
+  "rq8_stage_percent": {
+    "Subdomain posteriors": 59.69430784894456,
+    "Domain/LLM envelopes": 40.30569215105544
+  }
+}

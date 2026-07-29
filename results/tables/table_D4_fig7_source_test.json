@@ -1,0 +1,48 @@
+{
+  "name": "table_D4_fig7_source_test",
+  "caption": "D4: which accuracy source reproduces the published Fig. 7 panels",
+  "columns": [
+    "omega_race_h",
+    "source",
+    "p2_GPT-4o",
+    "p2_Sonnet 4.5"
+  ],
+  "rows": [
+    {
+      "omega_race_h": 0.1,
+      "source": "paper_table3",
+      "p2_GPT-4o": 0.8733,
+      "p2_Sonnet 4.5": 0.894
+    },
+    {
+      "omega_race_h": 0.1,
+      "source": "official_figure_numerics",
+      "p2_GPT-4o": 0.911,
+      "p2_Sonnet 4.5": 0.9181
+    },
+    {
+      "omega_race_h": 0.517,
+      "source": "paper_table3",
+      "p2_GPT-4o": 0.724431,
+      "p2_Sonnet 4.5": 0.86898
+    },
+    {
+      "omega_race_h": 0.517,
+      "source": "official_figure_numerics",
+      "p2_GPT-4o": 0.91517,
+      "p2_Sonnet 4.5": 0.931027
+    },
+    {
+      "omega_race_h": 0.9,
+      "source": "paper_table3",
+      "p2_GPT-4o": 0.5877,
+      "p2_Sonnet 4.5": 0.846
+    },
+    {
+      "omega_race_h": 0.9,
+      "source": "official_figure_numerics",
+      "p2_GPT-4o": 0.919,
+      "p2_Sonnet 4.5": 0.9429
+    }
+  ]
+}

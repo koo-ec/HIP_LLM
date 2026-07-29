@@ -14,7 +14,7 @@ from hip_llm.operational_profile import (
     validate_weights,
 )
 from hip_llm.posterior import run_model
-from hip_llm.schemas import DomainData, ModelResult, OperationalProfile, SubdomainData
+from hip_llm.schemas import DomainData, OperationalProfile, SubdomainData
 
 PAPER_OMEGA_1 = np.array([0.204, 0.796])
 PAPER_OMEGA_2 = np.array([0.483, 0.517])

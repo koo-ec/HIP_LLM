@@ -1,0 +1,8 @@
+quantity,paper_reference,supplied_key,resolved,why_it_matters
+ground-truth subdomain reliability vector theta^GT,Section 4.3.5 (only the aggregate p_L^GT = 0.5860 is printed),ground_truth.theta_gt,False,Determines every synthetic count; not identified by the aggregate.
+ground-truth operational profile OP^GT,"Section 4.3.5, Eq. (9) and footnote 21",ground_truth.op_gt,False,Sets p_L^GT jointly with theta^GT; underdetermined by 0.5860 alone.
+dataset-based operational profile OP^data,Section 4.3.5 ('proportional to dataset sizes' -- which sizes unstated),operational_profiles.op_data,False,Defines the OP-mismatch scenario rows of Tables 4 and 5.
+BB-Inf informative prior strength s,Section 4.3.5 ('informative priors centered on the GT reliabilities'),baselines.bb_inf.prior_strength,False,Controls how far BB-Inf is pulled toward the GT in the Small-N regime.
+HiBayES prior specification,"Section 4.3.5, reference [31]; no priors, link or code given","baselines.hibayes.{alpha_prior_sd, sigma_prior_scale}",False,Determines the amount of pooling and hence the HiBayES rows.
+OP perturbation magnitude for OP^approx,Section 4.3.5 states +/-20%; repository settings.yaml states sampling.PERTURBATION = 0.07 for 'all figures' -- unreconciled conflict,operational_profiles.perturbation_magnitude,False,0.20 vs 0.07 changes the OP^approx rows of both tables.
+random seeds for the synthetic draws,not stated for RQ5 (settings.yaml seeds cover figures only),seeds.synthetic,False,Table 4/5 are single-realisation numbers; a different draw moves them.

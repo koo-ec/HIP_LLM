@@ -1,0 +1,27 @@
+# Conda environment for the HIP-LLM replication.
+#
+# Python is pinned to 3.12 to match the paper's reported 3.12.12. The exact
+# patch release is not available from conda-forge for every platform, so the
+# notebook prints the resolved version and records any deviation.
+name: hip-llm-replication
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy=2.0.2        # paper-reported
+  - pandas=2.2.2       # paper-reported
+  - matplotlib-base=3.10.0  # paper-reported
+  - scipy>=1.11        # NOT paper-reported: reproduction dependency
+  - pyyaml>=6.0        # NOT paper-reported: reproduction dependency
+  - psutil>=5.9
+  - pytest>=8.0
+  - pytest-timeout>=2.3
+  - nbformat>=5.10
+  - ipykernel>=6.29
+  - pip
+  - pip:
+      - papermill>=2.6
+      # Live-API extras (Mode B only; omit for the published-numerics run):
+      - openai>=1.40
+      - anthropic>=0.40
+      - datasets>=2.20

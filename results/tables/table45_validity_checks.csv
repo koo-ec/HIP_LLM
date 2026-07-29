@@ -1,0 +1,25 @@
+check,passed,detail,table
+Table4 / OPdata / BB-UnInf: median within its own 90% interval,True,"median (0.5733, 0.5733) vs interval [0.5549, 0.5917]",Table 4
+Table4 / OPdata / BB-Inf: median within its own 90% interval,True,"median (0.5749, 0.5749) vs interval [0.5569, 0.5924]",Table 4
+Table4 / OPdata / HiBayES: median within its own 90% interval,True,"median (0.5732, 0.5732) vs interval [0.5552, 0.5915]",Table 4
+Table4 / OPdata / HIP-LLM: median within its own 90% interval,True,"median (0.5713, 0.5751) vs interval [0.5528, 0.5937]",Table 4
+Table4 / OPapprox / BB-UnInf: median within its own 90% interval,True,"median (0.574, 0.574) vs interval [0.546, 0.6009]",Table 4
+Table4 / OPapprox / BB-Inf: median within its own 90% interval,True,"median (0.5756, 0.5756) vs interval [0.5509, 0.5995]",Table 4
+Table4 / OPapprox / HiBayES: median within its own 90% interval,True,"median (0.5712, 0.5712) vs interval [0.5438, 0.5966]",Table 4
+Table4 / OPapprox / HIP-LLM: median within its own 90% interval,True,"median (0.5698, 0.5774) vs interval [0.5421, 0.6048]",Table 4
+Table4 / OPGT / BB-UnInf: median within its own 90% interval,True,"median (0.5782, 0.5782) vs interval [0.5486, 0.6062]",Table 4
+Table4 / OPGT / BB-Inf: median within its own 90% interval,True,"median (0.5796, 0.5796) vs interval [0.5538, 0.6042]",Table 4
+Table4 / OPGT / HiBayES: median within its own 90% interval,True,"median (0.575, 0.575) vs interval [0.5459, 0.6011]",Table 4
+Table4 / OPGT / HIP-LLM: median within its own 90% interval,True,"median (0.5738, 0.5816) vs interval [0.5446, 0.61]",Table 4
+Table5 / OPdata / BB-UnInf: median within its own 90% interval,True,"median (0.5907, 0.5907) vs interval [0.5849, 0.5965]",Table 5
+Table5 / OPdata / BB-Inf: median within its own 90% interval,True,"median (0.5908, 0.5908) vs interval [0.5849, 0.5965]",Table 5
+Table5 / OPdata / HiBayES: median within its own 90% interval,True,"median (0.5909, 0.5909) vs interval [0.5846, 0.5969]",Table 5
+Table5 / OPdata / HIP-LLM: median within its own 90% interval,True,"median (0.586, 0.5866) vs interval [0.5846, 0.5968]",Table 5
+Table5 / OPapprox / BB-UnInf: median within its own 90% interval,True,"median (0.5887, 0.5887) vs interval [0.5801, 0.5973]",Table 5
+Table5 / OPapprox / BB-Inf: median within its own 90% interval,True,"median (0.5885, 0.5885) vs interval [0.5799, 0.597]",Table 5
+Table5 / OPapprox / HiBayES: median within its own 90% interval,True,"median (0.5887, 0.5887) vs interval [0.58, 0.598]",Table 5
+Table5 / OPapprox / HIP-LLM: median within its own 90% interval,False,"median (0.5752, 0.5764) vs interval [0.5794, 0.5978]  <-- IMPOSSIBLE for a single posterior",Table 5
+Table5 / OPGT / BB-UnInf: median within its own 90% interval,True,"median (0.5928, 0.5928) vs interval [0.5836, 0.6017]",Table 5
+Table5 / OPGT / BB-Inf: median within its own 90% interval,True,"median (0.5926, 0.5926) vs interval [0.5837, 0.6015]",Table 5
+Table5 / OPGT / HiBayES: median within its own 90% interval,True,"median (0.5929, 0.5929) vs interval [0.5838, 0.6025]",Table 5
+Table5 / OPGT / HIP-LLM: median within its own 90% interval,False,"median (0.5784, 0.5797) vs interval [0.5832, 0.6024]  <-- IMPOSSIBLE for a single posterior",Table 5

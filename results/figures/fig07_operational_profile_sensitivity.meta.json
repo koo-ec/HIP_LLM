@@ -1,0 +1,19 @@
+{
+  "caption": "Posterior CDF envelopes for the Reasoning domain under alternative RACE-H operational weights.",
+  "config_hash": "b16d8266b8eda3752442ea4416434b8cfabf09b0b9c3f149edd2f579da03dd1a",
+  "data_source": "paper_table3",
+  "extra": {
+    "discrepancy": "D4 - Fig. 7 uses Table 3, not the repository CSV",
+    "hip_llm_version": "1.0.0",
+    "run_mode": "published_numerics",
+    "strict_exact": false
+  },
+  "figure_id": "Fig. 7",
+  "generated_utc": "2026-07-29T09:17:18+00:00",
+  "git_commit": "e9a1b36cbfd3c38bd7bb050467ea0a866abcf803",
+  "seeds": {
+    "configurations": 123,
+    "global": 7,
+    "llm_pairs": 999
+  }
+}

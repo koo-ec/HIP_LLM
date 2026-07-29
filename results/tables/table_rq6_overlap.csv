@@ -1,0 +1,7 @@
+metric,value
+90% interval overlap (intersection/union),0.6592611566285906
+median envelope shift Pass@1 -> Pass@3,0.02252312928727962
+shift as a fraction of the Pass@1 interval width,0.20025426115076406
+CDF-band overlap fraction (active region),0.21666666666666667
+"CDF-band overlap fraction (whole [0,1] grid, diluted)",0.06467661691542288
+max CDF separation,0.2741666666666668

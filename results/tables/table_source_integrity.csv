@@ -1,0 +1,8 @@
+source_id,role,status,sha256_ok
+paper_pdf,paper_mathematics,not present locally,
+official_repo_accuracies,official_repo_numerics,checksum matches,True
+paper_table3,printed_table,checksum matches,True
+fig9_caption,figure_caption,checksum matches,True
+paper_table4,printed_table,checksum matches,True
+paper_table5,printed_table,checksum matches,True
+paper_table6,printed_table,checksum matches,True

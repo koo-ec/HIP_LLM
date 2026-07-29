@@ -1,0 +1,13 @@
+package,installed,paper_reported,matches_paper
+numpy,2.5.1,2.0.2,False
+scipy,1.18.0,not reported by the paper,False
+pandas,2.2.3,2.2.2,False
+matplotlib,3.10.7,3.10.0,False
+yaml,6.0.2,not reported by the paper,False
+pytest,9.1.1,not reported by the paper,False
+papermill,2.7.0,not reported by the paper,False
+nbformat,5.10.4,not reported by the paper,False
+psutil,7.1.3,not reported by the paper,False
+openai,1.60.2,not reported by the paper,False
+anthropic,0.45.2,not reported by the paper,False
+datasets,3.1.0,not reported by the paper,False

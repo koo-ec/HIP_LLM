@@ -1,0 +1,4 @@
+feature,classical_bayesian,imprecise_computed,paper_printed
+Prior,"Beta(2, 2)","Beta(a, b), a in [1,3], b in [1,3]",same
+Posterior,"Beta(5, 9)","Beta(3+a, 7+b)",same
+Posterior mean,0.3571 -> 0.36,"[0.2857, 0.4286] -> [0.29, 0.43]","[0.31, 0.38]  <-- INCONSISTENT (D9)"

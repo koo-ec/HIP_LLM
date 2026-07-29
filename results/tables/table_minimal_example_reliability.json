@@ -1,0 +1,36 @@
+{
+  "name": "table_minimal_example_reliability",
+  "caption": "Minimal example: future reliability at n_F = 1, 2, 5, 10 (GPT-4o)",
+  "columns": [
+    "n_F",
+    "E[R_L] lower",
+    "E[R_L] upper",
+    "envelope width"
+  ],
+  "rows": [
+    {
+      "n_F": 1,
+      "E[R_L] lower": 0.828881608,
+      "E[R_L] upper": 0.8546710061,
+      "envelope width": 0.0257893981
+    },
+    {
+      "n_F": 2,
+      "E[R_L] lower": 0.6875432784,
+      "E[R_L] upper": 0.7308387618,
+      "envelope width": 0.0432954833
+    },
+    {
+      "n_F": 5,
+      "E[R_L] lower": 0.3940801893,
+      "E[R_L] upper": 0.4583632344,
+      "envelope width": 0.0642830451
+    },
+    {
+      "n_F": 10,
+      "E[R_L] lower": 0.1580394296,
+      "E[R_L] upper": 0.2127164627,
+      "envelope width": 0.0546770331
+    }
+  ]
+}

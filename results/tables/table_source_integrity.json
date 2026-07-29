@@ -1,0 +1,54 @@
+{
+  "name": "table_source_integrity",
+  "caption": "SHA-256 verification of every checksummed source",
+  "columns": [
+    "source_id",
+    "role",
+    "status",
+    "sha256_ok"
+  ],
+  "rows": [
+    {
+      "source_id": "paper_pdf",
+      "role": "paper_mathematics",
+      "status": "not present locally",
+      "sha256_ok": null
+    },
+    {
+      "source_id": "official_repo_accuracies",
+      "role": "official_repo_numerics",
+      "status": "checksum matches",
+      "sha256_ok": true
+    },
+    {
+      "source_id": "paper_table3",
+      "role": "printed_table",
+      "status": "checksum matches",
+      "sha256_ok": true
+    },
+    {
+      "source_id": "fig9_caption",
+      "role": "figure_caption",
+      "status": "checksum matches",
+      "sha256_ok": true
+    },
+    {
+      "source_id": "paper_table4",
+      "role": "printed_table",
+      "status": "checksum matches",
+      "sha256_ok": true
+    },
+    {
+      "source_id": "paper_table5",
+      "role": "printed_table",
+      "status": "checksum matches",
+      "sha256_ok": true
+    },
+    {
+      "source_id": "paper_table6",
+      "role": "printed_table",
+      "status": "checksum matches",
+      "sha256_ok": true
+    }
+  ]
+}

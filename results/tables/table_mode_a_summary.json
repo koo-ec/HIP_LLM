@@ -1,0 +1,71 @@
+{
+  "name": "table_mode_a_summary",
+  "caption": "Mode A: posterior summaries for all four models",
+  "columns": [
+    "model",
+    "D1 median lo",
+    "D1 median hi",
+    "D2 median lo",
+    "D2 median hi",
+    "p_L median lo",
+    "p_L median hi",
+    "p_L q05 lo",
+    "p_L q95 hi",
+    "envelope area",
+    "n_config_tuples"
+  ],
+  "rows": [
+    {
+      "model": "GPT-4o",
+      "D1 median lo": 0.469215812,
+      "D1 median hi": 0.4972642432,
+      "D2 median lo": 0.8914527085,
+      "D2 median hi": 0.9204475827,
+      "p_L median lo": 0.8298499962,
+      "p_L median hi": 0.8557217044,
+      "p_L q05 lo": 0.7905863891,
+      "p_L q95 hi": 0.8852899713,
+      "envelope area": 0.0262016667,
+      "n_config_tuples": 512
+    },
+    {
+      "model": "GPT-4o-mini",
+      "D1 median lo": 0.4283202721,
+      "D1 median hi": 0.4540263293,
+      "D2 median lo": 0.854056659,
+      "D2 median hi": 0.8826223241,
+      "p_L median lo": 0.7918186281,
+      "p_L median hi": 0.817172538,
+      "p_L q05 lo": 0.7494561958,
+      "p_L q95 hi": 0.8514970426,
+      "envelope area": 0.0256816667,
+      "n_config_tuples": 512
+    },
+    {
+      "model": "Sonnet 4.5",
+      "D1 median lo": 0.481279498,
+      "D1 median hi": 0.5099332012,
+      "D2 median lo": 0.9045011804,
+      "D2 median hi": 0.9336478464,
+      "p_L median lo": 0.8432169704,
+      "p_L median hi": 0.86951436,
+      "p_L q05 lo": 0.8054744205,
+      "p_L q95 hi": 0.8953317543,
+      "envelope area": 0.0261633333,
+      "n_config_tuples": 512
+    },
+    {
+      "model": "Haiku 3.5",
+      "D1 median lo": 0.4661161382,
+      "D1 median hi": 0.4927855794,
+      "D2 median lo": 0.8476232534,
+      "D2 median hi": 0.8760250443,
+      "p_L median lo": 0.7921839778,
+      "p_L median hi": 0.8178787919,
+      "p_L q05 lo": 0.7463586237,
+      "p_L q95 hi": 0.8528773409,
+      "envelope area": 0.0263433333,
+      "n_config_tuples": 512
+    }
+  ]
+}

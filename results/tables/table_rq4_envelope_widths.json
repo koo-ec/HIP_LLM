@@ -1,0 +1,41 @@
+{
+  "name": "table_rq4_envelope_widths",
+  "caption": "RQ4: envelope-width peaks and n_F = 1 values",
+  "columns": [
+    "model",
+    "peak_width_at_n_F",
+    "peak_width",
+    "E[R_L(1)] lower",
+    "E[R_L(1)] upper"
+  ],
+  "rows": [
+    {
+      "model": "GPT-4o",
+      "peak_width_at_n_F": 6,
+      "peak_width": 0.0649290361,
+      "E[R_L(1)] lower": 0.828881608,
+      "E[R_L(1)] upper": 0.8546710061
+    },
+    {
+      "model": "GPT-4o-mini",
+      "peak_width_at_n_F": 5,
+      "peak_width": 0.052031787,
+      "E[R_L(1)] lower": 0.7908610228,
+      "E[R_L(1)] upper": 0.8158808076
+    },
+    {
+      "model": "Sonnet 4.5",
+      "peak_width_at_n_F": 6,
+      "peak_width": 0.0707822395,
+      "E[R_L(1)] lower": 0.8422668277,
+      "E[R_L(1)] upper": 0.8682433102
+    },
+    {
+      "model": "Haiku 3.5",
+      "peak_width_at_n_F": 5,
+      "peak_width": 0.0532694708,
+      "E[R_L(1)] lower": 0.7908241587,
+      "E[R_L(1)] upper": 0.8164618206
+    }
+  ]
+}

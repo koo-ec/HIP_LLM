@@ -9,7 +9,6 @@ import pytest
 from scipy import stats
 
 from hip_llm.baselines import (
-    RQ5BlockedError,
     bb_informative,
     bb_uninformative,
     generate_synthetic_counts,

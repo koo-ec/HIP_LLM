@@ -1,0 +1,41 @@
+{
+  "name": "table_theorem_map",
+  "caption": "Theorem -> implementation -> test map",
+  "columns": [
+    "theorem",
+    "implemented_in",
+    "verified_by"
+  ],
+  "rows": [
+    {
+      "theorem": "Theorem 1 (subdomain non-failure probability)",
+      "implemented_in": "hip_llm.hyperposterior.log_hyperposterior + posterior.sample_domain_posterior",
+      "verified_by": "tests/test_conjugacy.py, tests/test_hyperposterior.py"
+    },
+    {
+      "theorem": "Theorem 2 (domain-level CDF, Lemma 1 decomposition)",
+      "implemented_in": "hip_llm.posterior.sample_domain_posterior + envelopes.cdf_envelope",
+      "verified_by": "tests/test_conjugacy.py::test_hyperposterior_reproduces_a_known_2d_integral"
+    },
+    {
+      "theorem": "Theorem 3 (LLM-level CDF, Cartesian admissible set)",
+      "implemented_in": "hip_llm.posterior.run_model + grids.pair_llm_configurations",
+      "verified_by": "tests/test_envelopes.py::test_llm_envelope_is_valid_and_pairs_are_joint"
+    },
+    {
+      "theorem": "Theorem 4 (subdomain reliability for n_F)",
+      "implemented_in": "hip_llm.reliability.transformed_cdf",
+      "verified_by": "tests/test_reliability_transform.py::test_transformed_cdf_identity"
+    },
+    {
+      "theorem": "Theorem 5 (domain reliability for n_F)",
+      "implemented_in": "hip_llm.reliability.reliability_cdf_envelope",
+      "verified_by": "tests/test_reliability_transform.py::test_monte_carlo_and_transform_agree"
+    },
+    {
+      "theorem": "Theorem 6 (LLM reliability for n_F)",
+      "implemented_in": "hip_llm.reliability.expected_reliability_envelope",
+      "verified_by": "tests/test_reliability_transform.py (envelope + monotonicity)"
+    }
+  ]
+}

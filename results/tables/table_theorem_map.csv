@@ -1,0 +1,7 @@
+theorem,implemented_in,verified_by
+Theorem 1 (subdomain non-failure probability),hip_llm.hyperposterior.log_hyperposterior + posterior.sample_domain_posterior,"tests/test_conjugacy.py, tests/test_hyperposterior.py"
+"Theorem 2 (domain-level CDF, Lemma 1 decomposition)",hip_llm.posterior.sample_domain_posterior + envelopes.cdf_envelope,tests/test_conjugacy.py::test_hyperposterior_reproduces_a_known_2d_integral
+"Theorem 3 (LLM-level CDF, Cartesian admissible set)",hip_llm.posterior.run_model + grids.pair_llm_configurations,tests/test_envelopes.py::test_llm_envelope_is_valid_and_pairs_are_joint
+Theorem 4 (subdomain reliability for n_F),hip_llm.reliability.transformed_cdf,tests/test_reliability_transform.py::test_transformed_cdf_identity
+Theorem 5 (domain reliability for n_F),hip_llm.reliability.reliability_cdf_envelope,tests/test_reliability_transform.py::test_monte_carlo_and_transform_agree
+Theorem 6 (LLM reliability for n_F),hip_llm.reliability.expected_reliability_envelope,tests/test_reliability_transform.py (envelope + monotonicity)

@@ -1,0 +1,36 @@
+{
+  "name": "table_rq3_effect_sizes",
+  "caption": "RQ3: OP sensitivity magnitude per model",
+  "columns": [
+    "source",
+    "model",
+    "median_swing",
+    "mean_envelope_width"
+  ],
+  "rows": [
+    {
+      "source": "official_figure_numerics",
+      "model": "GPT-4o",
+      "median_swing": 0.0089061878,
+      "mean_envelope_width": 0.1174011157
+    },
+    {
+      "source": "official_figure_numerics",
+      "model": "Sonnet 4.5",
+      "median_swing": 0.0282889983,
+      "mean_envelope_width": 0.1103029931
+    },
+    {
+      "source": "paper_table3",
+      "model": "GPT-4o",
+      "median_swing": 0.2695223632,
+      "mean_envelope_width": 0.1513377455
+    },
+    {
+      "source": "paper_table3",
+      "model": "Sonnet 4.5",
+      "median_swing": 0.0467239242,
+      "mean_envelope_width": 0.1343063379
+    }
+  ]
+}

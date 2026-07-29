@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/koo-ec/HIP_LLM/security/advisories/new
+    about: Report vulnerabilities privately; do not open a public issue.
+  - name: Support guidance
+    url: https://github.com/koo-ec/HIP_LLM/blob/main/SUPPORT.md
+    about: Read what information to include when requesting help.

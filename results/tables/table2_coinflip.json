@@ -1,0 +1,30 @@
+{
+  "name": "table2_coinflip",
+  "caption": "Paper Table 2, recomputed analytically",
+  "columns": [
+    "feature",
+    "classical_bayesian",
+    "imprecise_computed",
+    "paper_printed"
+  ],
+  "rows": [
+    {
+      "feature": "Prior",
+      "classical_bayesian": "Beta(2, 2)",
+      "imprecise_computed": "Beta(a, b), a in [1,3], b in [1,3]",
+      "paper_printed": "same"
+    },
+    {
+      "feature": "Posterior",
+      "classical_bayesian": "Beta(5, 9)",
+      "imprecise_computed": "Beta(3+a, 7+b)",
+      "paper_printed": "same"
+    },
+    {
+      "feature": "Posterior mean",
+      "classical_bayesian": "0.3571 -> 0.36",
+      "imprecise_computed": "[0.2857, 0.4286] -> [0.29, 0.43]",
+      "paper_printed": "[0.31, 0.38]  <-- INCONSISTENT (D9)"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+check,passed,detail
+Fig. 9 Pass@1 (Sonnet 4.5/MBPP) agrees with paper Table 3,False,caption 0.4710 vs paper Table 3 0.4500 (|diff| = 0.0210)
+Fig. 9 Pass@1 (Sonnet 4.5/MBPP) agrees with repository figure numerics,False,caption 0.4710 vs repository figure numerics 0.4860 (|diff| = 0.0150)
+Fig. 9 N differs from the baseline effective N,False,Fig. 9 uses N = 257; the baseline figures use N = 80

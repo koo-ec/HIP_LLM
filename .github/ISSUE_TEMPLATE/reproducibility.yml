@@ -1,0 +1,54 @@
+name: Reproducibility mismatch
+description: Report a numerical, provenance or generated-artefact discrepancy
+title: "[Reproducibility]: "
+labels: ["reproducibility", "triage"]
+body:
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Execution mode
+      options:
+        - published_numerics
+        - strict_exact
+        - live_api
+        - tests only
+        - other
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Command used
+      placeholder: python scripts/run_notebook.py ...
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+      description: Include the table, figure, statistic or error and its path.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result and source
+      description: Cite the paper section, repository artefact or prior verified output.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and dependency versions
+      description: Include Python, operating system and relevant package versions.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I reviewed data/provenance_manifest.yaml for a known discrepancy.
+          required: true
+        - label: I removed API keys, private prompts and provider responses.
+          required: true

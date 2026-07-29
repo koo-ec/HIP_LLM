@@ -1,0 +1,176 @@
+{
+  "name": "table_effective_counts",
+  "caption": "Published accuracy -> effective counts, C = round(theta_hat * 80)",
+  "columns": [
+    "model",
+    "domain",
+    "subdomain",
+    "theta_hat_published",
+    "N",
+    "C_effective",
+    "C_over_N",
+    "rounding_shift"
+  ],
+  "rows": [
+    {
+      "model": "GPT-4o",
+      "domain": "D1",
+      "subdomain": "MBPP",
+      "theta_hat_published": 0.479,
+      "N": 80,
+      "C_effective": 38,
+      "C_over_N": 0.475,
+      "rounding_shift": -0.004
+    },
+    {
+      "model": "GPT-4o",
+      "domain": "D1",
+      "subdomain": "DS-1000",
+      "theta_hat_published": 0.49,
+      "N": 80,
+      "C_effective": 39,
+      "C_over_N": 0.4875,
+      "rounding_shift": -0.0025
+    },
+    {
+      "model": "GPT-4o",
+      "domain": "D2",
+      "subdomain": "BoolQ",
+      "theta_hat_published": 0.91,
+      "N": 80,
+      "C_effective": 73,
+      "C_over_N": 0.9125,
+      "rounding_shift": 0.0025
+    },
+    {
+      "model": "GPT-4o",
+      "domain": "D2",
+      "subdomain": "RACE-H",
+      "theta_hat_published": 0.92,
+      "N": 80,
+      "C_effective": 74,
+      "C_over_N": 0.925,
+      "rounding_shift": 0.005
+    },
+    {
+      "model": "GPT-4o-mini",
+      "domain": "D1",
+      "subdomain": "MBPP",
+      "theta_hat_published": 0.447,
+      "N": 80,
+      "C_effective": 36,
+      "C_over_N": 0.45,
+      "rounding_shift": 0.003
+    },
+    {
+      "model": "GPT-4o-mini",
+      "domain": "D1",
+      "subdomain": "DS-1000",
+      "theta_hat_published": 0.44,
+      "N": 80,
+      "C_effective": 35,
+      "C_over_N": 0.4375,
+      "rounding_shift": -0.0025
+    },
+    {
+      "model": "GPT-4o-mini",
+      "domain": "D2",
+      "subdomain": "BoolQ",
+      "theta_hat_published": 0.892,
+      "N": 80,
+      "C_effective": 71,
+      "C_over_N": 0.8875,
+      "rounding_shift": -0.0045
+    },
+    {
+      "model": "GPT-4o-mini",
+      "domain": "D2",
+      "subdomain": "RACE-H",
+      "theta_hat_published": 0.873,
+      "N": 80,
+      "C_effective": 70,
+      "C_over_N": 0.875,
+      "rounding_shift": 0.002
+    },
+    {
+      "model": "Sonnet 4.5",
+      "domain": "D1",
+      "subdomain": "MBPP",
+      "theta_hat_published": 0.486,
+      "N": 80,
+      "C_effective": 39,
+      "C_over_N": 0.4875,
+      "rounding_shift": 0.0015
+    },
+    {
+      "model": "Sonnet 4.5",
+      "domain": "D1",
+      "subdomain": "DS-1000",
+      "theta_hat_published": 0.495,
+      "N": 80,
+      "C_effective": 40,
+      "C_over_N": 0.5,
+      "rounding_shift": 0.005
+    },
+    {
+      "model": "Sonnet 4.5",
+      "domain": "D2",
+      "subdomain": "BoolQ",
+      "theta_hat_published": 0.915,
+      "N": 80,
+      "C_effective": 73,
+      "C_over_N": 0.9125,
+      "rounding_shift": -0.0025
+    },
+    {
+      "model": "Sonnet 4.5",
+      "domain": "D2",
+      "subdomain": "RACE-H",
+      "theta_hat_published": 0.946,
+      "N": 80,
+      "C_effective": 76,
+      "C_over_N": 0.95,
+      "rounding_shift": 0.004
+    },
+    {
+      "model": "Haiku 3.5",
+      "domain": "D1",
+      "subdomain": "MBPP",
+      "theta_hat_published": 0.447,
+      "N": 80,
+      "C_effective": 36,
+      "C_over_N": 0.45,
+      "rounding_shift": 0.003
+    },
+    {
+      "model": "Haiku 3.5",
+      "domain": "D1",
+      "subdomain": "DS-1000",
+      "theta_hat_published": 0.483,
+      "N": 80,
+      "C_effective": 39,
+      "C_over_N": 0.4875,
+      "rounding_shift": 0.0045
+    },
+    {
+      "model": "Haiku 3.5",
+      "domain": "D2",
+      "subdomain": "BoolQ",
+      "theta_hat_published": 0.883,
+      "N": 80,
+      "C_effective": 71,
+      "C_over_N": 0.8875,
+      "rounding_shift": 0.0045
+    },
+    {
+      "model": "Haiku 3.5",
+      "domain": "D2",
+      "subdomain": "RACE-H",
+      "theta_hat_published": 0.859,
+      "N": 80,
+      "C_effective": 69,
+      "C_over_N": 0.8625,
+      "rounding_shift": 0.0035
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "table_rq6_overlap",
+  "caption": "RQ6: overlap and separation metrics",
+  "columns": [
+    "metric",
+    "value"
+  ],
+  "rows": [
+    {
+      "metric": "90% interval overlap (intersection/union)",
+      "value": 0.6592611566
+    },
+    {
+      "metric": "median envelope shift Pass@1 -> Pass@3",
+      "value": 0.0225231293
+    },
+    {
+      "metric": "shift as a fraction of the Pass@1 interval width",
+      "value": 0.2002542612
+    },
+    {
+      "metric": "CDF-band overlap fraction (active region)",
+      "value": 0.2166666667
+    },
+    {
+      "metric": "CDF-band overlap fraction (whole [0,1] grid, diluted)",
+      "value": 0.0646766169
+    },
+    {
+      "metric": "max CDF separation",
+      "value": 0.2741666667
+    }
+  ]
+}

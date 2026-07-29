@@ -1,0 +1,42 @@
+{
+  "name": "table_figure_source_assignment",
+  "caption": "Per-figure accuracy-source assignment",
+  "columns": [
+    "figure",
+    "source"
+  ],
+  "rows": [
+    {
+      "figure": "Fig3",
+      "source": "official_figure_numerics"
+    },
+    {
+      "figure": "Fig4",
+      "source": "official_figure_numerics"
+    },
+    {
+      "figure": "Fig5",
+      "source": "official_figure_numerics"
+    },
+    {
+      "figure": "Fig6",
+      "source": "official_figure_numerics"
+    },
+    {
+      "figure": "Fig7",
+      "source": "paper_table3"
+    },
+    {
+      "figure": "Fig8",
+      "source": "official_figure_numerics"
+    },
+    {
+      "figure": "Fig9",
+      "source": "fig9_caption"
+    },
+    {
+      "figure": "Fig10",
+      "source": "official_figure_numerics"
+    }
+  ]
+}

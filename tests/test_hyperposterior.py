@@ -23,7 +23,7 @@ from hip_llm.grids import (
 )
 from hip_llm.hyperposterior import HyperposteriorCache, log_hyperposterior
 from hip_llm.numerics import log_beta_binomial_evidence, log_beta_pdf, log_gamma_pdf
-from hip_llm.schemas import HyperparameterConfiguration, HyperparameterInterval
+from hip_llm.schemas import HyperparameterConfiguration
 
 
 # --- 28. extreme admissible hyperparameters stay finite --------------------- #

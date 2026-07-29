@@ -1,0 +1,18 @@
+{
+  "caption": "Posterior CDF envelopes of non-failure probability at the subdomain level; rows are domains (D1: MBPP, DS-1000; D2: BoolQ, RACE-H).",
+  "config_hash": "b16d8266b8eda3752442ea4416434b8cfabf09b0b9c3f149edd2f579da03dd1a",
+  "data_source": "official_figure_numerics",
+  "extra": {
+    "hip_llm_version": "1.0.0",
+    "run_mode": "published_numerics",
+    "strict_exact": false
+  },
+  "figure_id": "Fig. 3",
+  "generated_utc": "2026-07-29T09:16:25+00:00",
+  "git_commit": "e9a1b36cbfd3c38bd7bb050467ea0a866abcf803",
+  "seeds": {
+    "configurations": 123,
+    "global": 7,
+    "llm_pairs": 999
+  }
+}

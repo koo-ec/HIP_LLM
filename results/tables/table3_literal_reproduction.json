@@ -1,0 +1,142 @@
+{
+  "name": "table3_literal_reproduction",
+  "caption": "Paper Table 3 reproduced literally (separate dataset)",
+  "columns": [
+    "model",
+    "domain",
+    "subdomain",
+    "theta_hat_table3",
+    "N",
+    "C_effective"
+  ],
+  "rows": [
+    {
+      "model": "GPT-4o",
+      "domain": "D1",
+      "subdomain": "MBPP",
+      "theta_hat_table3": 0.471,
+      "N": 80,
+      "C_effective": 38
+    },
+    {
+      "model": "GPT-4o",
+      "domain": "D1",
+      "subdomain": "DS-1000",
+      "theta_hat_table3": 0.42,
+      "N": 80,
+      "C_effective": 34
+    },
+    {
+      "model": "GPT-4o",
+      "domain": "D2",
+      "subdomain": "BoolQ",
+      "theta_hat_table3": 0.909,
+      "N": 80,
+      "C_effective": 73
+    },
+    {
+      "model": "GPT-4o",
+      "domain": "D2",
+      "subdomain": "RACE-H",
+      "theta_hat_table3": 0.552,
+      "N": 80,
+      "C_effective": 44
+    },
+    {
+      "model": "GPT-4o-mini",
+      "domain": "D1",
+      "subdomain": "MBPP",
+      "theta_hat_table3": 0.44,
+      "N": 80,
+      "C_effective": 35
+    },
+    {
+      "model": "GPT-4o-mini",
+      "domain": "D1",
+      "subdomain": "DS-1000",
+      "theta_hat_table3": 0.49,
+      "N": 80,
+      "C_effective": 39
+    },
+    {
+      "model": "GPT-4o-mini",
+      "domain": "D2",
+      "subdomain": "BoolQ",
+      "theta_hat_table3": 0.89,
+      "N": 80,
+      "C_effective": 71
+    },
+    {
+      "model": "GPT-4o-mini",
+      "domain": "D2",
+      "subdomain": "RACE-H",
+      "theta_hat_table3": 0.82,
+      "N": 80,
+      "C_effective": 66
+    },
+    {
+      "model": "Sonnet 4.5",
+      "domain": "D1",
+      "subdomain": "MBPP",
+      "theta_hat_table3": 0.45,
+      "N": 80,
+      "C_effective": 36
+    },
+    {
+      "model": "Sonnet 4.5",
+      "domain": "D1",
+      "subdomain": "DS-1000",
+      "theta_hat_table3": 0.493,
+      "N": 80,
+      "C_effective": 39
+    },
+    {
+      "model": "Sonnet 4.5",
+      "domain": "D2",
+      "subdomain": "BoolQ",
+      "theta_hat_table3": 0.9,
+      "N": 80,
+      "C_effective": 72
+    },
+    {
+      "model": "Sonnet 4.5",
+      "domain": "D2",
+      "subdomain": "RACE-H",
+      "theta_hat_table3": 0.84,
+      "N": 80,
+      "C_effective": 67
+    },
+    {
+      "model": "Haiku 3.5",
+      "domain": "D1",
+      "subdomain": "MBPP",
+      "theta_hat_table3": 0.447,
+      "N": 80,
+      "C_effective": 36
+    },
+    {
+      "model": "Haiku 3.5",
+      "domain": "D1",
+      "subdomain": "DS-1000",
+      "theta_hat_table3": 0.483,
+      "N": 80,
+      "C_effective": 39
+    },
+    {
+      "model": "Haiku 3.5",
+      "domain": "D2",
+      "subdomain": "BoolQ",
+      "theta_hat_table3": 0.883,
+      "N": 80,
+      "C_effective": 71
+    },
+    {
+      "model": "Haiku 3.5",
+      "domain": "D2",
+      "subdomain": "RACE-H",
+      "theta_hat_table3": 0.859,
+      "N": 80,
+      "C_effective": 69
+    }
+  ]
+}

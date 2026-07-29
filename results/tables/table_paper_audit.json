@@ -1,0 +1,262 @@
+{
+  "name": "table_paper_audit",
+  "caption": "Paper item -> notebook section -> artifact -> reproduction status",
+  "columns": [
+    "paper_item",
+    "inputs",
+    "notebook_section",
+    "output_file",
+    "status",
+    "note"
+  ],
+  "rows": [
+    {
+      "paper_item": "Table 1 (framework comparison)",
+      "inputs": "paper text (qualitative)",
+      "notebook_section": "2",
+      "output_file": "results/tables/table1_framework_comparison.csv",
+      "status": "exact",
+      "note": "verbatim transcription; no computation involved"
+    },
+    {
+      "paper_item": "Theorem 1",
+      "inputs": "paper Section 3.2.3 / Appendix A",
+      "notebook_section": "2",
+      "output_file": "results/tables/table_theorem_map.csv",
+      "status": "exact",
+      "note": "implemented and unit-tested against analytical/quadrature references"
+    },
+    {
+      "paper_item": "Theorem 2",
+      "inputs": "paper Section 3.2.3 / Appendix A",
+      "notebook_section": "2",
+      "output_file": "results/tables/table_theorem_map.csv",
+      "status": "exact",
+      "note": "implemented and unit-tested against analytical/quadrature references"
+    },
+    {
+      "paper_item": "Theorem 3",
+      "inputs": "paper Section 3.2.3 / Appendix A",
+      "notebook_section": "2",
+      "output_file": "results/tables/table_theorem_map.csv",
+      "status": "exact",
+      "note": "implemented and unit-tested against analytical/quadrature references"
+    },
+    {
+      "paper_item": "Theorem 4",
+      "inputs": "paper Section 3.2.3 / Appendix A",
+      "notebook_section": "2",
+      "output_file": "results/tables/table_theorem_map.csv",
+      "status": "exact",
+      "note": "implemented and unit-tested against analytical/quadrature references"
+    },
+    {
+      "paper_item": "Theorem 5",
+      "inputs": "paper Section 3.2.3 / Appendix A",
+      "notebook_section": "2",
+      "output_file": "results/tables/table_theorem_map.csv",
+      "status": "exact",
+      "note": "implemented and unit-tested against analytical/quadrature references"
+    },
+    {
+      "paper_item": "Theorem 6",
+      "inputs": "paper Section 3.2.3 / Appendix A",
+      "notebook_section": "2",
+      "output_file": "results/tables/table_theorem_map.csv",
+      "status": "exact",
+      "note": "implemented and unit-tested against analytical/quadrature references"
+    },
+    {
+      "paper_item": "Fig. 1 (conceptual hierarchy)",
+      "inputs": "model graph",
+      "notebook_section": "2",
+      "output_file": "results/figures/fig01_*.png",
+      "status": "exact",
+      "note": "redrawn from the model graph; encodes independent domains, dependent subdomains via shared (mu, nu), observed (C, N), OP-weighted aggregation, multiple LLMs"
+    },
+    {
+      "paper_item": "Fig. 2 (detailed hierarchical structure)",
+      "inputs": "model graph",
+      "notebook_section": "2",
+      "output_file": "results/figures/fig02_*.png",
+      "status": "exact",
+      "note": "redrawn from the model graph; encodes independent domains, dependent subdomains via shared (mu, nu), observed (C, N), OP-weighted aggregation, multiple LLMs"
+    },
+    {
+      "paper_item": "Table 2 (coin flip)",
+      "inputs": "analytical Beta-Binomial conjugacy",
+      "notebook_section": "4",
+      "output_file": "results/tables/table2_coinflip.csv",
+      "status": "inconsistent_source_artifact",
+      "note": "precise column reproduces exactly (0.36); the printed imprecise interval [0.31, 0.38] does not follow from the printed credal set, which gives [0.29, 0.43] (D9)"
+    },
+    {
+      "paper_item": "Table 3 (published accuracies)",
+      "inputs": "paper Table 3, verbatim",
+      "notebook_section": "6",
+      "output_file": "results/tables/table3_literal_reproduction.csv",
+      "status": "exact",
+      "note": "reproduced verbatim as its own dataset; NOT merged with the repository numerics (D1)"
+    },
+    {
+      "paper_item": "Fig. 3 (subdomain CDF envelopes)",
+      "inputs": "official_figure_numerics + HIP-LLM inference",
+      "notebook_section": "7",
+      "output_file": "results/figures/fig03_subdomain_cdf_envelopes.png",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "freshly computed; qualitative orderings match the paper's narrative exactly"
+    },
+    {
+      "paper_item": "Fig. 4 (domain CDF envelopes)",
+      "inputs": "official_figure_numerics + HIP-LLM inference",
+      "notebook_section": "7",
+      "output_file": "results/figures/fig04_*.png",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "freshly computed from the published measurements"
+    },
+    {
+      "paper_item": "Fig. 5 (LLM CDF envelopes)",
+      "inputs": "official_figure_numerics + HIP-LLM inference",
+      "notebook_section": "7",
+      "output_file": "results/figures/fig05_*.png",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "freshly computed from the published measurements"
+    },
+    {
+      "paper_item": "Fig. 6 (hyperparameter sensitivity)",
+      "inputs": "official_figure_numerics + HIP-LLM inference",
+      "notebook_section": "8",
+      "output_file": "results/figures/fig06_hyperparameter_sensitivity.png",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "exact intervals from the paper; d controls width most (confirmed), but d also shifts location more than a or b, so the paper's a/b-location vs c/d-width split is only approximate (see D10)"
+    },
+    {
+      "paper_item": "Fig. 7 (OP sensitivity)",
+      "inputs": "paper_table3 + HIP-LLM inference",
+      "notebook_section": "9",
+      "output_file": "results/figures/fig07_operational_profile_sensitivity.png",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "reproduced from Table 3, which is the only source consistent with the published panel (D4)"
+    },
+    {
+      "paper_item": "Fig. 8 (expected future reliability)",
+      "inputs": "official_figure_numerics + HIP-LLM inference",
+      "notebook_section": "10",
+      "output_file": "results/figures/fig08_expected_reliability.png",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "E[p^n] computed per configuration then enveloped; monotonicity verified automatically"
+    },
+    {
+      "paper_item": "Tables 4 and 5 (RQ5 baselines)",
+      "inputs": "paper Section 4.3.5 (underdetermined)",
+      "notebook_section": "11",
+      "output_file": "results/tables/table45_*.csv",
+      "status": "blocked_by_missing_source_information",
+      "note": "ground-truth theta and OP vectors, BB-Inf prior strength, HiBayES priors and seeds are all unstated; two printed Table 5 rows are additionally mathematically inconsistent (D3)"
+    },
+    {
+      "paper_item": "RQ5",
+      "inputs": "paper Section 4.3.5",
+      "notebook_section": "11",
+      "output_file": "results/tables/table_rq5_blocking_checklist.csv",
+      "status": "blocked_by_missing_source_information",
+      "note": "7 of 7 required inputs unresolved"
+    },
+    {
+      "paper_item": "Fig. 9 (Pass@1 vs Pass@3)",
+      "inputs": "Fig. 9 caption aggregate counts",
+      "notebook_section": "12",
+      "output_file": "results/figures/fig09_pass1_vs_pass3.png",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "aggregate_reproduction: per-task binary outcomes are not published, so this is not a complete benchmark re-run; captioned values conflict with both accuracy sources (D2)"
+    },
+    {
+      "paper_item": "Fig. 10a (memory growth)",
+      "inputs": "live same-session API run",
+      "notebook_section": "13",
+      "output_file": "n/a",
+      "status": "not_attempted",
+      "note": "requires Mode B; deliberately NOT synthesised from a formula"
+    },
+    {
+      "paper_item": "Fig. 10b-d (memory stress test)",
+      "inputs": "official_figure_numerics + injected theta_BoolQ",
+      "notebook_section": "13",
+      "output_file": "results/figures/fig10_memory_sensitivity.png",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "sensitivity injection reproduced; component A (real same-session run) not attempted in Mode A and deliberately not fabricated"
+    },
+    {
+      "paper_item": "Fig. 11 (scalability)",
+      "inputs": "measured on this machine",
+      "notebook_section": "14",
+      "output_file": "results/figures/fig11_scalability.png",
+      "status": "faithful_contemporary_rerun",
+      "note": "absolute timings are machine-specific; the reproducible claims are the scaling exponents and the stage breakdown"
+    },
+    {
+      "paper_item": "Table 6 (peak memory)",
+      "inputs": "measured on this machine (tracemalloc)",
+      "notebook_section": "14",
+      "output_file": "results/tables/table6_peak_memory_measured.csv",
+      "status": "faithful_contemporary_rerun",
+      "note": "paper values retained as reference only, never emitted as measurements"
+    },
+    {
+      "paper_item": "RQ1 (effectiveness)",
+      "inputs": "see section",
+      "notebook_section": "7",
+      "output_file": "see section",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "Figs. 3-5 reproduced; model orderings and overlaps match the paper's narrative"
+    },
+    {
+      "paper_item": "RQ2 (hyperparameter sensitivity)",
+      "inputs": "see section",
+      "notebook_section": "8",
+      "output_file": "see section",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "Fig. 6 reproduced with the paper's exact intervals; d dominates envelope WIDTH as the paper states, but d also shifts LOCATION more than a or b, so the paper's clean a/b-location vs c/d-width split is only approximate here (see D10)"
+    },
+    {
+      "paper_item": "RQ3 (OP sensitivity)",
+      "inputs": "see section",
+      "notebook_section": "9",
+      "output_file": "see section",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "Fig. 7 reproduced from Table 3 (D4); GPT-4o strongly OP-sensitive, Sonnet 4.5 not"
+    },
+    {
+      "paper_item": "RQ4 (predictability)",
+      "inputs": "see section",
+      "notebook_section": "10",
+      "output_file": "see section",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "Fig. 8 reproduced; E[R(1)] range and the bell-shaped width peak both match"
+    },
+    {
+      "paper_item": "RQ6 (failure definitions)",
+      "inputs": "see section",
+      "notebook_section": "12",
+      "output_file": "see section",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "Fig. 9 reproduced from captioned aggregates only (aggregate_reproduction)"
+    },
+    {
+      "paper_item": "RQ7 (memory effects)",
+      "inputs": "see section",
+      "notebook_section": "13",
+      "output_file": "see section",
+      "status": "reconstructed_with_labelled_assumption",
+      "note": "stress test reproduced; the real same-session experiment needs Mode B"
+    },
+    {
+      "paper_item": "RQ8 (scalability)",
+      "inputs": "see section",
+      "notebook_section": "14",
+      "output_file": "see section",
+      "status": "faithful_contemporary_rerun",
+      "note": "measured on this machine; exponents and stage breakdown are the reproducible claims"
+    }
+  ]
+}

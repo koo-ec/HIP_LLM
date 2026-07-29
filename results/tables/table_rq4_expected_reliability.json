@@ -1,0 +1,181 @@
+{
+  "name": "table_rq4_expected_reliability",
+  "caption": "RQ4: expected reliability at selected horizons",
+  "columns": [
+    "model",
+    "n_F",
+    "E[R_L] lower",
+    "E[R_L] upper",
+    "envelope width"
+  ],
+  "rows": [
+    {
+      "model": "GPT-4o",
+      "n_F": 1,
+      "E[R_L] lower": 0.828881608,
+      "E[R_L] upper": 0.8546710061,
+      "envelope width": 0.0257893981
+    },
+    {
+      "model": "GPT-4o",
+      "n_F": 2,
+      "E[R_L] lower": 0.6875432784,
+      "E[R_L] upper": 0.7308387618,
+      "envelope width": 0.0432954833
+    },
+    {
+      "model": "GPT-4o",
+      "n_F": 5,
+      "E[R_L] lower": 0.3940801893,
+      "E[R_L] upper": 0.4583632344,
+      "envelope width": 0.0642830451
+    },
+    {
+      "model": "GPT-4o",
+      "n_F": 10,
+      "E[R_L] lower": 0.1580394296,
+      "E[R_L] upper": 0.2127164627,
+      "envelope width": 0.0546770331
+    },
+    {
+      "model": "GPT-4o",
+      "n_F": 20,
+      "E[R_L] lower": 0.0267040836,
+      "E[R_L] upper": 0.0474413888,
+      "envelope width": 0.0207373052
+    },
+    {
+      "model": "GPT-4o",
+      "n_F": 60,
+      "E[R_L] lower": 3.82592e-05,
+      "E[R_L] upper": 0.00017464,
+      "envelope width": 0.0001363808
+    },
+    {
+      "model": "GPT-4o-mini",
+      "n_F": 1,
+      "E[R_L] lower": 0.7908610228,
+      "E[R_L] upper": 0.8158808076,
+      "envelope width": 0.0250197848
+    },
+    {
+      "model": "GPT-4o-mini",
+      "n_F": 2,
+      "E[R_L] lower": 0.6260438673,
+      "E[R_L] upper": 0.6661732009,
+      "envelope width": 0.0401293336
+    },
+    {
+      "model": "GPT-4o-mini",
+      "n_F": 5,
+      "E[R_L] lower": 0.3122505338,
+      "E[R_L] upper": 0.3642823208,
+      "envelope width": 0.052031787
+    },
+    {
+      "model": "GPT-4o-mini",
+      "n_F": 10,
+      "E[R_L] lower": 0.0997026164,
+      "E[R_L] upper": 0.1351735886,
+      "envelope width": 0.0354709722
+    },
+    {
+      "model": "GPT-4o-mini",
+      "n_F": 20,
+      "E[R_L] lower": 0.0108219974,
+      "E[R_L] upper": 0.0195989046,
+      "envelope width": 0.0087769072
+    },
+    {
+      "model": "GPT-4o-mini",
+      "n_F": 60,
+      "E[R_L] lower": 3.0223e-06,
+      "E[R_L] upper": 1.56944e-05,
+      "envelope width": 1.26721e-05
+    },
+    {
+      "model": "Sonnet 4.5",
+      "n_F": 1,
+      "E[R_L] lower": 0.8422668277,
+      "E[R_L] upper": 0.8682433102,
+      "envelope width": 0.0259764825
+    },
+    {
+      "model": "Sonnet 4.5",
+      "n_F": 2,
+      "E[R_L] lower": 0.7098633901,
+      "E[R_L] upper": 0.7541757486,
+      "envelope width": 0.0443123586
+    },
+    {
+      "model": "Sonnet 4.5",
+      "n_F": 5,
+      "E[R_L] lower": 0.4265580944,
+      "E[R_L] upper": 0.4955480195,
+      "envelope width": 0.0689899251
+    },
+    {
+      "model": "Sonnet 4.5",
+      "n_F": 10,
+      "E[R_L] lower": 0.1847575485,
+      "E[R_L] upper": 0.2481621044,
+      "envelope width": 0.0634045559
+    },
+    {
+      "model": "Sonnet 4.5",
+      "n_F": 20,
+      "E[R_L] lower": 0.036195011,
+      "E[R_L] upper": 0.0641071664,
+      "envelope width": 0.0279121553
+    },
+    {
+      "model": "Sonnet 4.5",
+      "n_F": 60,
+      "E[R_L] lower": 8.58423e-05,
+      "E[R_L] upper": 0.0004009254,
+      "envelope width": 0.0003150831
+    },
+    {
+      "model": "Haiku 3.5",
+      "n_F": 1,
+      "E[R_L] lower": 0.7908241587,
+      "E[R_L] upper": 0.8164618206,
+      "envelope width": 0.0256376619
+    },
+    {
+      "model": "Haiku 3.5",
+      "n_F": 2,
+      "E[R_L] lower": 0.6260331455,
+      "E[R_L] upper": 0.6671412065,
+      "envelope width": 0.041108061
+    },
+    {
+      "model": "Haiku 3.5",
+      "n_F": 5,
+      "E[R_L] lower": 0.3124082807,
+      "E[R_L] upper": 0.3656777515,
+      "envelope width": 0.0532694708
+    },
+    {
+      "model": "Haiku 3.5",
+      "n_F": 10,
+      "E[R_L] lower": 0.0999730933,
+      "E[R_L] upper": 0.1362854732,
+      "envelope width": 0.0363123799
+    },
+    {
+      "model": "Haiku 3.5",
+      "n_F": 20,
+      "E[R_L] lower": 0.0109482332,
+      "E[R_L] upper": 0.0199574506,
+      "envelope width": 0.0090092174
+    },
+    {
+      "model": "Haiku 3.5",
+      "n_F": 60,
+      "E[R_L] lower": 3.3951e-06,
+      "E[R_L] upper": 1.70761e-05,
+      "envelope width": 1.3681e-05
+    }
+  ]
+}
