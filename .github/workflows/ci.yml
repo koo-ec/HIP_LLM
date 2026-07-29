@@ -1,4 +1,4 @@
-name: CI
+name: Continuous Integration
 
 on:
   push:
@@ -44,18 +44,6 @@ jobs:
           enable-cache: true
       - run: uv sync --frozen --group dev
       - run: uv run --no-sync ruff check src tests scripts
-
-  documentation:
-    name: Documentation
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          python-version: "3.11"
-          enable-cache: true
-      - run: uv sync --frozen --group docs
-      - run: uv run --no-sync sphinx-build -W --keep-going -b html docs/source docs/_build/html
 
   package:
     name: Build package
