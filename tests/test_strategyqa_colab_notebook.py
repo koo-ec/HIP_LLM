@@ -41,4 +41,7 @@ def test_strategyqa_colab_pins_inputs_and_uses_explicit_op() -> None:
     assert "operational_profile" in text
     assert "parse_strategyqa_answer" in text
     assert "OPENAI_API_KEY" in text
+    assert "google.colab" in text
+    assert "decomposition_steps" in text
+    assert "selected_qids" in text
     assert "api_error_policy" in text
