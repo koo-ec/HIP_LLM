@@ -1,0 +1,19 @@
+version: 2
+
+build:
+  os: ubuntu-24.04
+  tools:
+    python: "3.11"
+  jobs:
+    post_checkout:
+      - curl -LsSf https://astral.sh/uv/install.sh | sh
+    post_install:
+      - UV_PROJECT_ENVIRONMENT="$READTHEDOCS_VIRTUALENV_PATH" "$HOME/.local/bin/uv" sync --frozen --group docs
+
+sphinx:
+  configuration: docs/source/conf.py
+  fail_on_warning: true
+
+formats:
+  - pdf
+  - epub

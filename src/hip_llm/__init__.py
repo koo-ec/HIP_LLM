@@ -15,7 +15,12 @@ experiments the paper itself defines as synthetic.
 
 from __future__ import annotations
 
-__version__ = "1.0.0"
+from importlib.metadata import PackageNotFoundError, version
+
+try:
+    __version__ = version("HIPLLM")
+except PackageNotFoundError:  # source tree without an installed distribution
+    __version__ = "unknown"
 
 PAPER_DOI = "10.1016/j.ress.2026.112615"
 OFFICIAL_REPOSITORY = "https://github.com/aghazadehchakherlou-web/llm-imprecise-bayes"

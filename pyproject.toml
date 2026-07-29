@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "hip-llm-replication"
-version = "1.0.0"
-description = "Tested replication of HIP-LLM reliability inference"
+name = "HIPLLM"
+version = "1.1.0"
+description = "Failure-probability scoring and hierarchical imprecise reliability inference for LLMs"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
@@ -41,25 +41,39 @@ dependencies = [
 Homepage = "https://github.com/koo-ec/HIP_LLM"
 Repository = "https://github.com/koo-ec/HIP_LLM"
 Issues = "https://github.com/koo-ec/HIP_LLM/issues"
+Documentation = "https://hipllm.readthedocs.io"
 Publication = "https://doi.org/10.1016/j.ress.2026.112615"
 
 [project.optional-dependencies]
 test = ["pytest>=8.0", "pytest-timeout>=2.3", "nbformat>=5.10", "papermill>=2.6", "ipykernel>=6.29"]
 live = ["openai>=1.40", "anthropic>=0.40", "datasets>=2.20"]
+vertex = ["langchain-google-vertexai>=2.0.8,<4"]
 profile = ["psutil>=5.9"]
-dev = ["ruff>=0.6", "build>=1.2"]
+docs = [
+  "sphinx>=7.4,<9",
+  "furo>=2024.8.6",
+  "sphinx-autodoc-typehints>=2.3",
+  "myst-parser>=3.0",
+]
+dev = ["ruff>=0.6", "build>=1.2", "twine>=5.1"]
 all = [
   "pytest>=8.0", "pytest-timeout>=2.3", "nbformat>=5.10", "papermill>=2.6",
   "ipykernel>=6.29", "openai>=1.40", "anthropic>=0.40", "datasets>=2.20",
-  "psutil>=5.9", "ruff>=0.6", "build>=1.2",
+  "psutil>=5.9", "ruff>=0.6", "build>=1.2", "twine>=5.1",
+  "langchain-google-vertexai>=2.0.8,<4", "sphinx>=7.4,<9", "furo>=2024.8.6",
+  "sphinx-autodoc-typehints>=2.3", "myst-parser>=3.0",
 ]
+
+[dependency-groups]
+dev = ["ruff>=0.6", "build>=1.2", "twine>=5.1", "pytest>=8.0", "pytest-timeout>=2.3"]
+docs = ["sphinx>=7.4,<9", "furo>=2024.8.6", "sphinx-autodoc-typehints>=2.3", "myst-parser>=3.0"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["hip_llm*"]
+include = ["hip_llm*", "HIPLLM*"]
 
 [tool.pytest.ini_options]
 minversion = "8.0"

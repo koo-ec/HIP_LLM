@@ -1,6 +1,8 @@
 # HIP-LLM
 
 [![CI](https://github.com/koo-ec/HIP_LLM/actions/workflows/ci.yml/badge.svg)](https://github.com/koo-ec/HIP_LLM/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/HIPLLM.svg)](https://pypi.org/project/HIPLLM/)
+[![Documentation Status](https://readthedocs.org/projects/hipllm/badge/?version=latest)](https://hipllm.readthedocs.io/en/latest/)
 [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](pyproject.toml)
 [![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.ress.2026.112615-blue)](https://doi.org/10.1016/j.ress.2026.112615)
@@ -23,43 +25,61 @@ The package reproduces the disclosed statistical inference from published measur
 
 Source discrepancies and reconstruction assumptions are recorded in [`data/provenance_manifest.yaml`](data/provenance_manifest.yaml) and discussed in [`results/reproduction_report.md`](results/reproduction_report.md). The implementation does not silently substitute missing source information.
 
-## Quick start
+## Prompt-level failure scoring
+
+HIPLLM now provides a concise, LangChain-compatible API inspired by UQLM:
+
+```python
+from langchain_google_vertexai import ChatVertexAI
+from HIPLLM import FailureProb
+
+prompts = ["What is the capital of France?", "Explain why the sky appears blue."]
+llm = ChatVertexAI(model="gemini-2.5-pro")
+FP = FailureProb(llm=llm, scorers=["min_probability"])
+
+results = await FP.generate_and_score(prompts=prompts)
+results.to_df()
+```
+
+`min_probability` is the least likely generated-token probability. With one
+selected scorer, HIPLLM reports `failure_probability = 1 - confidence`. This is
+a token-confidence heuristic, not a calibrated probability of factual error;
+validate and calibrate it on labelled data for the target task.
+
+Install the Vertex AI integration from PyPI with:
+
+```bash
+pip install "HIPLLM[vertex]"
+```
+
+See the [quick-start documentation](docs/source/quickstart.md) for all supported
+scorers and result columns.
+
+## Reproducible development with uv
 
 ### Requirements
 
 - Python 3.10 or later
-- Git
+- Git and [uv](https://docs.astral.sh/uv/)
 
 ### Installation
 
 ```bash
 git clone https://github.com/koo-ec/HIP_LLM.git
 cd HIP_LLM
-python -m venv .venv
+uv sync --frozen --extra test --extra profile
 ```
 
-Activate the environment:
+Run the safe test suite and linter:
 
 ```bash
-# Linux/macOS
-source .venv/bin/activate
-
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
+uv run pytest -m "not live and not slow and not notebook"
+uv run ruff check src tests scripts
 ```
 
-Install the project and test dependencies:
-
-```bash
-python -m pip install --upgrade pip
-python -m pip install -e ".[test,profile]"
-```
-
-For the exact recorded dependency set:
-
-```bash
-python -m pip install -r requirements-lock.txt
-```
+`uv.lock` is the authoritative development lock file. The historical
+`requirements-lock.txt` and Conda environment remain available for replication
+workflows.
 
 A Conda environment is also available:
 
@@ -94,7 +114,7 @@ python scripts/run_notebook.py --strict-exact
 ```
 
 > [!CAUTION]
-The `configs/live_api.yaml` file is a design specification for a future paid-provider evaluation pipeline; live execution is **not implemented** in this release. Never commit API keys or cached provider responses.
+The paper-replication pipeline's `configs/live_api.yaml` remains a design specification for a future paid-provider benchmark and is separate from the prompt-level `FailureProb` API. Never commit API keys or cached provider responses.
 
 ## Repository layout
 
@@ -119,6 +139,7 @@ HIP_LLM/
 - [Generated tables](results/tables/)
 - [Data provenance](data/provenance_manifest.yaml)
 - [Repository documentation index](docs/README.md)
+- [Read the Docs source](docs/source/index.rst)
 
 ## Contributing
 
