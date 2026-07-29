@@ -22,10 +22,15 @@ def test_strategyqa_colab_code_cells_are_syntactically_valid() -> None:
     for index, cell in enumerate(notebook.cells):
         if cell.cell_type != "code":
             continue
-        source = cell.source.strip()
-        if not source or source.startswith("%"):
+        python_lines = [
+            line
+            for line in cell.source.splitlines()
+            if not line.lstrip().startswith(("%", "!"))
+        ]
+        source = "\n".join(python_lines).strip()
+        if not source:
             continue
-        ast.parse(cell.source, filename=f"{NOTEBOOK}:cell-{index}")
+        ast.parse(source, filename=f"{NOTEBOOK}:cell-{index}")
 
 
 def test_strategyqa_colab_pins_inputs_and_uses_explicit_op() -> None:
