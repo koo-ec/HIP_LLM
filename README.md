@@ -13,7 +13,7 @@ A tested implementation and replication package for:
 > **“A hierarchical imprecise probability approach to reliability assessment of large language models”**,<br>
 > *Reliability Engineering & System Safety* **272** (2026), 112615.
 
-HIP-LLM models large-language-model reliability using hierarchical Bayesian inference, imprecise priors and operational profiles. This repository includes the reusable Python implementation, tests, source-provenance records, a generated replication notebook, and reproducible result artefacts.
+HIP-LLM models large-language-model reliability using hierarchical Bayesian inference, imprecise priors and explicit operational profiles. This repository includes the reusable Python implementation, tests, source-provenance records, generated notebooks and reproducible result artefacts.
 
 <p align="center">
   <img src="docs/figures/General_Structure_2.PNG" alt="HIP-LLM hierarchy" width="80%">
@@ -25,9 +25,46 @@ The package reproduces the disclosed statistical inference from published measur
 
 Source discrepancies and reconstruction assumptions are recorded in [`data/provenance_manifest.yaml`](data/provenance_manifest.yaml) and discussed in [`results/reproduction_report.md`](results/reproduction_report.md). The implementation does not silently substitute missing source information.
 
-## Prompt-level failure scoring
+## Operational-profile probability of failure
 
-HIPLLM now provides a concise, LangChain-compatible API inspired by UQLM:
+An operational-profile estimate needs two inputs:
+
+1. binary correctness observations from a labelled evaluation set; and
+2. an explicit probability distribution describing how frequently each workload stratum occurs in the intended application.
+
+```python
+from HIPLLM import OperationalFailureProb, quick_inference_settings
+
+# 1 = correct answer, 0 = failed answer.
+outcomes = [1, 1, 0, 1, 0, 0, 1, 0]
+strata = ["short"] * 4 + ["long"] * 4
+
+# Target workload: 30% short questions and 70% long questions.
+operational_profile = {"short": 0.30, "long": 0.70}
+
+estimator = OperationalFailureProb(
+    profile=operational_profile,
+    settings=quick_inference_settings(samples=1500, configurations=48),
+)
+result = estimator.fit(outcomes=outcomes, strata=strata)
+
+print(result.summary())
+result.to_df()
+```
+
+The result reports the direct operational-profile-weighted error estimate and lower/upper posterior bounds across the admissible imprecise-prior configurations. The operational profile is required and is never inferred silently.
+
+### StrategyQA + OpenAI Colab
+
+The runnable notebook loads the labelled StrategyQA development split from the official repository, sends a deterministic yes/no prompt to a pinned OpenAI model snapshot, records correctness, defines a decomposition-length operational profile, and estimates operational failure probability:
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/koo-ec/HIP_LLM/blob/main/notebooks/strategyqa_openai_operational_profile_colab.ipynb)
+
+The notebook expects `OPENAI_API_KEY` to be present in the Colab environment and caches predictions so interrupted evaluations can resume.
+
+## Token-confidence diagnostic — a separate quantity
+
+`FailureProb` is retained for LangChain-compatible token-logprob analysis:
 
 ```python
 from langchain_google_vertexai import ChatVertexAI
@@ -35,25 +72,19 @@ from HIPLLM import FailureProb
 
 prompts = ["What is the capital of France?", "Explain why the sky appears blue."]
 llm = ChatVertexAI(model="gemini-2.5-pro")
-FP = FailureProb(llm=llm, scorers=["min_probability"])
+scorer = FailureProb(llm=llm, scorers=["min_probability"])
 
-results = await FP.generate_and_score(prompts=prompts)
-results.to_df()
+scores = await scorer.generate_and_score(prompts=prompts)
+scores.to_df()
 ```
 
-`min_probability` is the least likely generated-token probability. With one
-selected scorer, HIPLLM reports `failure_probability = 1 - confidence`. This is
-a token-confidence heuristic, not a calibrated probability of factual error;
-validate and calibrate it on labelled data for the target task.
+Here, `failure_probability = 1 - token_confidence`. It does **not** use an operational profile and is not a calibrated factual-error probability unless it is validated and calibrated against labelled target-task data. Use `OperationalFailureProb` for the HIP-LLM operational-profile calculation.
 
-Install the Vertex AI integration from PyPI with:
+Install the optional Vertex AI integration with:
 
 ```bash
 pip install "HIPLLM[vertex]"
 ```
-
-See the [quick-start documentation](docs/source/quickstart.md) for all supported
-scorers and result columns.
 
 ## Reproducible development with uv
 
@@ -70,16 +101,15 @@ cd HIP_LLM
 uv sync --frozen --extra test --extra profile
 ```
 
-Run the safe test suite and linter:
+Run the safe test suite, source compilation and linter:
 
 ```bash
+uv run python -m compileall -q src
 uv run pytest -m "not live and not slow and not notebook"
 uv run ruff check src tests scripts
 ```
 
-`uv.lock` is the authoritative development lock file. The historical
-`requirements-lock.txt` and Conda environment remain available for replication
-workflows.
+`uv.lock` is the authoritative development lock file. The historical `requirements-lock.txt` and Conda environment remain available for replication workflows.
 
 A Conda environment is also available:
 
@@ -114,16 +144,18 @@ python scripts/run_notebook.py --strict-exact
 ```
 
 > [!CAUTION]
-The paper-replication pipeline's `configs/live_api.yaml` remains a design specification for a future paid-provider benchmark and is separate from the prompt-level `FailureProb` API. Never commit API keys or cached provider responses.
+> The paper-replication pipeline's `configs/live_api.yaml` remains a design specification for a paid-provider benchmark. Never commit API keys or cached provider responses.
 
 ## Repository layout
 
 ```text
 HIP_LLM/
-├── src/hip_llm/                    reusable Python package
+├── src/HIPLLM/                    high-level user API
+├── src/hip_llm/                   statistical inference implementation
 ├── tests/                         unit and reproducibility tests
 ├── configs/                       published, scalability and optional live modes
 ├── data/                          reference data and provenance manifest
+├── notebooks/                     runnable evaluation notebooks
 ├── scripts/                       notebook, test and provenance tooling
 ├── results/                       generated figures, tables and report
 ├── docs/figures/                  paper and explanatory image assets
@@ -133,6 +165,7 @@ HIP_LLM/
 
 ## Documentation and results
 
+- [Quick start](docs/source/quickstart.md)
 - [Paper-oriented overview and visualisations](docs/paper-overview.md)
 - [Replication report](results/reproduction_report.md)
 - [Generated figures](results/figures/)

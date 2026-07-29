@@ -30,6 +30,8 @@ jobs:
           enable-cache: true
       - name: Install locked project
         run: uv sync --frozen --extra test --extra profile
+      - name: Compile source tree
+        run: uv run --no-sync python -m compileall -q src
       - name: Run safe default tests
         run: uv run --no-sync pytest -m "not live and not slow and not notebook"
 
