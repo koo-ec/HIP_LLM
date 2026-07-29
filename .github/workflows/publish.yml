@@ -1,45 +1,89 @@
-name: Publish to PyPI
+name: Publish to PyPI and GitHub Releases
 
 on:
-  release:
-    types: [published]
-  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
 
 permissions:
   contents: read
 
 jobs:
   build:
-    name: Build distributions
+    name: Build release distributions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
         with:
+          python-version: "3.12"
           enable-cache: true
-      - name: Verify locked dependencies
-        run: uv lock --check
-      - name: Build source and wheel distributions
-        run: uv build
-      - name: Check package metadata
-        run: uvx twine check dist/*
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      - name: Verify tag matches package version
+        shell: bash
+        run: |
+          PACKAGE_VERSION=$(python - <<'PY'
+          import tomllib
+          with open("pyproject.toml", "rb") as handle:
+              print(tomllib.load(handle)["project"]["version"])
+          PY
+          )
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          if [[ "${TAG_VERSION}" != "${PACKAGE_VERSION}" ]]; then
+            echo "Tag version ${TAG_VERSION} does not match pyproject.toml version ${PACKAGE_VERSION}."
+            exit 1
+          fi
+      - name: Build and validate distributions
+        run: |
+          uv build
+          uvx twine check dist/*
+      - name: Upload distributions
+        uses: actions/upload-artifact@v4
         with:
           name: python-distributions
           path: dist/
+          if-no-files-found: error
+          retention-days: 14
 
-  publish:
-    name: Publish distributions
+  publish-pypi:
+    name: Publish to PyPI
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/HIPLLM
+      url: https://pypi.org/project/HIPLLM/
     permissions:
       id-token: write
     steps:
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+      - name: Download distributions
+        uses: actions/download-artifact@v4
         with:
           name: python-distributions
-          path: dist/
-      - uses: pypa/gh-action-pypi-publish@ba38be9e461d3875417946c167d0b5f3d385a247 # release/v1
+          path: dist
+      - name: Publish distributions with trusted publishing
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+  github-release:
+    name: Create GitHub release
+    needs: [build, publish-pypi]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: python-distributions
+          path: dist
+      - name: Create or update release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
+            gh release upload "${GITHUB_REF_NAME}" dist/* --clobber
+          else
+            gh release create "${GITHUB_REF_NAME}" dist/* \
+              --verify-tag \
+              --generate-notes \
+              --title "${GITHUB_REF_NAME}"
+          fi
