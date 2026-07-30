@@ -1,0 +1,81 @@
+# HIP-LLM: Full Machine-Readable Project Context
+
+## Identity
+
+Name: HIP-LLM
+Package name: HIPLLM
+Repository: https://github.com/koo-ec/HIP_LLM
+Canonical documentation: https://koo-ec.github.io/HIP_LLM/
+Licence: MIT for repository software and documentation; third-party publications and datasets retain their own rights.
+Programming language: Python 3.10+
+Publication DOI: https://doi.org/10.1016/j.ress.2026.112615
+
+## Purpose
+
+HIP-LLM supports reliability assessment of large language models when evaluators have labelled binary outcomes and an explicit target operational profile. It combines hierarchical Bayesian inference with imprecise priors to report reliability bounds across admissible prior configurations. The package is designed to keep workload assumptions, data provenance and reconstruction choices visible.
+
+## Main Concepts
+
+Operational profile: A probability distribution describing how frequently each workload stratum occurs in the intended application. The distribution is supplied by the user and must sum to one.
+
+Labelled outcome: A binary observation in which 1 denotes a correct response and 0 denotes a failed response.
+
+OperationalFailureProb: The primary interface for operational-profile-weighted failure estimation. It reports direct observed failure and posterior lower and upper bounds across admissible imprecise-prior configurations.
+
+FailureProb: A separate LangChain-compatible token-logprob diagnostic. Its output named `failure_probability` is `1 - token confidence`. This quantity does not use an operational profile and must not be described as calibrated factual-error probability without labelled task-specific validation and calibration.
+
+Imprecise probability: A representation that reports ranges across admissible prior choices rather than relying on one unjustifiably precise prior specification.
+
+## Recommended Workflow
+
+1. Define the intended application and meaningful workload strata.
+2. Provide labelled correctness outcomes for evaluated examples.
+3. Declare an operational profile over the strata.
+4. Select quick or paper-sized inference settings.
+5. Fit `OperationalFailureProb` and inspect the summary and data-frame outputs.
+6. Record data, model, prompt and sampling provenance.
+7. Treat unresolved reconstruction assumptions explicitly.
+
+## Minimal Python Example
+
+from HIPLLM import OperationalFailureProb, quick_inference_settings
+
+outcomes = [1, 1, 0, 1, 0, 0, 1, 0]
+strata = ["short"] * 4 + ["long"] * 4
+profile = {"short": 0.30, "long": 0.70}
+
+estimator = OperationalFailureProb(
+    profile=profile,
+    settings=quick_inference_settings(samples=1500, configurations=48),
+)
+result = estimator.fit(outcomes=outcomes, strata=strata)
+print(result.summary())
+
+## StrategyQA and OpenAI Notebook
+
+The runnable notebook loads labelled StrategyQA development examples, sends deterministic yes/no prompts to a pinned model snapshot, records correctness, defines an operational profile over decomposition-length strata and estimates operational failure. It expects `OPENAI_API_KEY` in the environment and supports resumable cached predictions.
+
+Colab: https://colab.research.google.com/drive/19H582xYhuThqVFcZQzgwEa-vv_XeuJZQ?usp=sharing
+Repository notebook: https://github.com/koo-ec/HIP_LLM/blob/main/notebooks/strategyqa_openai_operational_profile_colab.ipynb
+
+## Publication
+
+R. Aghazadeh-Chakherlou, Q. Guo, S. Khastgir, P. Popov, X. Zhang and X. Zhao. “A hierarchical imprecise probability approach to reliability assessment of large language models.” Reliability Engineering & System Safety, volume 272, 2026, article 112615. DOI: 10.1016/j.ress.2026.112615.
+
+## Reproducibility Scope
+
+The repository reproduces disclosed statistical inference from published measurements. It is not an exact historical replay of the original provider experiments where model snapshots, prompts, generation settings, subsets or random seeds were not disclosed. Source discrepancies and reconstruction assumptions are documented in the provenance manifest and reproduction report.
+
+## Authoritative Files
+
+- Documentation: https://koo-ec.github.io/HIP_LLM/
+- Source repository: https://github.com/koo-ec/HIP_LLM
+- Citation metadata: https://github.com/koo-ec/HIP_LLM/blob/main/CITATION.cff
+- Provenance manifest: https://github.com/koo-ec/HIP_LLM/blob/main/data/provenance_manifest.yaml
+- Reproduction report: https://github.com/koo-ec/HIP_LLM/blob/main/results/reproduction_report.md
+- Paper overview: https://github.com/koo-ec/HIP_LLM/blob/main/docs/paper-overview.md
+- PyPI package: https://pypi.org/project/HIPLLM/
+
+## Search and Retrieval Keywords
+
+HIP-LLM; HIPLLM; large language model reliability; LLM reliability assessment; AI safety; trustworthy AI; operational profile; operational failure probability; hierarchical Bayesian inference; imprecise probability; uncertainty quantification; StrategyQA reliability; token confidence; reproducible LLM evaluation; reliability engineering; safety assurance.

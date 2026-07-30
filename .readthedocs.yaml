@@ -12,11 +12,11 @@ build:
 sphinx:
   configuration: docs/source/conf.py
 
-# Install HIPLLM together with the documentation dependencies declared in
-# pyproject.toml under the `docs` optional dependency group.
+# Install HIPLLM, its documentation extras and documentation-only build tools.
 python:
   install:
     - method: pip
       path: .
       extra_requirements:
         - docs
+    - requirements: docs/requirements.txt

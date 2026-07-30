@@ -60,7 +60,9 @@ Use `paper_inference_settings()` instead of `quick_inference_settings()` when th
 
 ## Run StrategyQA with OpenAI
 
-The Colab notebook at `notebooks/strategyqa_openai_operational_profile_colab.ipynb` performs the complete workflow:
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19H582xYhuThqVFcZQzgwEa-vv_XeuJZQ?usp=sharing)
+
+The [shared Google Colab notebook](https://colab.research.google.com/drive/19H582xYhuThqVFcZQzgwEa-vv_XeuJZQ?usp=sharing) and the [version-controlled repository notebook](https://github.com/koo-ec/HIP_LLM/blob/main/notebooks/strategyqa_openai_operational_profile_colab.ipynb) perform the complete workflow:
 
 1. load the official labelled StrategyQA development split;
 2. send independent yes/no questions to a pinned OpenAI model snapshot;
@@ -68,7 +70,7 @@ The Colab notebook at `notebooks/strategyqa_openai_operational_profile_colab.ipy
 4. define an operational profile over decomposition-length strata; and
 5. estimate operational failure probability and uncertainty bounds.
 
-The notebook expects `OPENAI_API_KEY` in the environment and writes resumable prediction and summary files.
+The notebook expects `OPENAI_API_KEY` in the environment and writes resumable prediction and summary files. Store the key in Colab secrets or the runtime environment; do not place it in notebook cells or commit it to the repository.
 
 ## Token-confidence scoring is different
 
@@ -82,7 +84,6 @@ prompts = [
     "What is the capital of France?",
     "Explain why the sky appears blue.",
 ]
-
 llm = ChatVertexAI(model="gemini-2.5-pro")
 scorer = FailureProb(llm=llm, scorers=["min_probability"])
 scores = await scorer.generate_and_score(prompts=prompts)

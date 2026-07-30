@@ -1,6 +1,7 @@
 # HIP-LLM
 
 [![CI](https://github.com/koo-ec/HIP_LLM/actions/workflows/ci.yml/badge.svg)](https://github.com/koo-ec/HIP_LLM/actions/workflows/ci.yml)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-008f86?logo=github)](https://koo-ec.github.io/HIP_LLM/)
 [![PyPI](https://img.shields.io/pypi/v/HIPLLM.svg)](https://pypi.org/project/HIPLLM/)
 [![Documentation Status](https://readthedocs.org/projects/hipllm/badge/?version=latest)](https://hipllm.readthedocs.io/en/latest/)
 [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
@@ -166,14 +167,17 @@ HIP_LLM/
 
 ## Documentation and results
 
-- [Quick start](docs/source/quickstart.md)
+- [Project website and documentation](https://koo-ec.github.io/HIP_LLM/)
+- [Quick start](https://koo-ec.github.io/HIP_LLM/quickstart/)
+- [API reference](https://koo-ec.github.io/HIP_LLM/api/)
+- [Paper and replication documentation](https://koo-ec.github.io/HIP_LLM/paper/)
 - [Paper-oriented overview and visualisations](docs/paper-overview.md)
 - [Replication report](results/reproduction_report.md)
 - [Generated figures](results/figures/)
 - [Generated tables](results/tables/)
 - [Data provenance](data/provenance_manifest.yaml)
 - [Repository documentation index](docs/README.md)
-- [Read the Docs source](docs/source/index.rst)
+- [Read the Docs mirror](https://hipllm.readthedocs.io/en/latest/)
 
 ## Contributing
 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" role="img" aria-labelledby="title desc">
+  <title id="title">HIP-LLM</title>
+  <desc id="desc">HIP-LLM teal layered reliability mark and wordmark</desc>
+  <g fill="none" stroke="#008f86" stroke-width="5" stroke-linejoin="round">
+    <path d="M13 15h48v50H13z" opacity=".35"/>
+    <path d="M21 9h48v50H21z" opacity=".65"/>
+    <path d="M29 3h48v50H29z"/>
+  </g>
+  <path d="M40 17v22M64 17v22M40 28h24" stroke="#008f86" stroke-width="6" stroke-linecap="round"/>
+  <text x="94" y="50" fill="#008f86" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="39" font-weight="800" letter-spacing="-1.4">HIP-LLM</text>
+</svg>

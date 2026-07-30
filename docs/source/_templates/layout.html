@@ -1,0 +1,96 @@
+{% extends "!layout.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% set clean_title = title|striptags if title else project %}
+  {% set seo_title = clean_title ~ " — HIP-LLM" if pagename != "index" else "HIP-LLM — Reliability Assessment for Large Language Models" %}
+  {% set seo_description = page_descriptions.get(pagename, default_description) %}
+  {% set seo_keywords = page_keywords.get(pagename, "HIP-LLM, LLM reliability, AI safety, Bayesian reliability, imprecise probability") %}
+  {% set seo_url = pageurl if pageurl is defined and pageurl else site_url %}
+  <meta name="description" content="{{ seo_description|e }}">
+  <meta name="keywords" content="{{ seo_keywords|e }}">
+  <meta name="author" content="HIP-LLM contributors">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#008f86">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:type" content="{% if pagename == 'paper' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="HIP-LLM">
+  <meta property="og:title" content="{{ seo_title|e }}">
+  <meta property="og:description" content="{{ seo_description|e }}">
+  <meta property="og:url" content="{{ seo_url|e }}">
+  <meta property="og:image" content="{{ social_image|e }}">
+  <meta property="og:image:alt" content="HIP-LLM hierarchical reliability assessment architecture">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ seo_title|e }}">
+  <meta name="twitter:description" content="{{ seo_description|e }}">
+  <meta name="twitter:image" content="{{ social_image|e }}">
+  <link rel="author" href="https://koo-ec.github.io/">
+  <link rel="alternate" type="text/plain" title="HIP-LLM guide for language models" href="{{ site_url }}llms.txt">
+  <link rel="alternate" type="text/plain" title="HIP-LLM full context for language models" href="{{ site_url }}llms-full.txt">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "{{ site_url }}#software",
+        "name": "HIP-LLM",
+        "alternateName": "Hierarchical Imprecise Probability for Large Language Model Reliability",
+        "description": {{ default_description|tojson }},
+        "url": "{{ site_url }}",
+        "codeRepository": "{{ repository_url }}",
+        "programmingLanguage": "Python",
+        "runtimePlatform": "Python 3.10 or later",
+        "license": "https://opensource.org/license/mit",
+        "version": "{{ release }}",
+        "citation": "https://doi.org/10.1016/j.ress.2026.112615",
+        "keywords": [
+          "large language model reliability",
+          "AI safety",
+          "operational profiles",
+          "hierarchical Bayesian inference",
+          "imprecise probability",
+          "uncertainty quantification"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site_url }}#website",
+        "url": "{{ site_url }}",
+        "name": "HIP-LLM documentation",
+        "description": {{ default_description|tojson }},
+        "publisher": {"@id": "{{ site_url }}#software"},
+        "inLanguage": "en-GB"
+      },
+      {
+        "@type": "TechArticle",
+        "@id": {{ (seo_url ~ "#webpage")|tojson }},
+        "url": {{ seo_url|tojson }},
+        "headline": {{ seo_title|tojson }},
+        "description": {{ seo_description|tojson }},
+        "isPartOf": {"@id": "{{ site_url }}#website"},
+        "about": {"@id": "{{ site_url }}#software"},
+        "inLanguage": "en-GB"
+      }{% if pagename == "paper" %},
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1016/j.ress.2026.112615",
+        "name": "A hierarchical imprecise probability approach to reliability assessment of large language models",
+        "identifier": "https://doi.org/10.1016/j.ress.2026.112615",
+        "isPartOf": {"@type": "Periodical", "name": "Reliability Engineering & System Safety"},
+        "datePublished": "2026",
+        "pagination": "112615",
+        "author": [
+          {"@type": "Person", "name": "Robab Aghazadeh-Chakherlou"},
+          {"@type": "Person", "name": "Qing Guo"},
+          {"@type": "Person", "name": "Siddartha Khastgir"},
+          {"@type": "Person", "name": "Peter Popov"},
+          {"@type": "Person", "name": "Xiaoge Zhang"},
+          {"@type": "Person", "name": "Xingyu Zhao"}
+        ]
+      }{% endif %}
+    ]
+  }
+  </script>
+{% endblock %}
