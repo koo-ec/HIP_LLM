@@ -64,7 +64,6 @@ docs = [
   "furo>=2024.8.6",
   "sphinx-autodoc-typehints>=2.3",
   "myst-parser>=3.0",
-  "sphinx-sitemap>=2.7,<3",
 ]
 dev = ["ruff>=0.6", "build>=1.2", "twine>=5.1"]
 all = [
@@ -72,18 +71,12 @@ all = [
   "ipykernel>=6.29", "openai>=1.40", "anthropic>=0.40", "datasets>=2.20",
   "psutil>=5.9", "ruff>=0.6", "build>=1.2", "twine>=5.1",
   "langchain-google-vertexai>=2.0.8,<4", "sphinx>=7.4,<9", "furo>=2024.8.6",
-  "sphinx-autodoc-typehints>=2.3", "myst-parser>=3.0", "sphinx-sitemap>=2.7,<3",
+  "sphinx-autodoc-typehints>=2.3", "myst-parser>=3.0",
 ]
 
 [dependency-groups]
 dev = ["ruff>=0.6", "build>=1.2", "twine>=5.1", "pytest>=8.0", "pytest-timeout>=2.3"]
-docs = [
-  "sphinx>=7.4,<9",
-  "furo>=2024.8.6",
-  "sphinx-autodoc-typehints>=2.3",
-  "myst-parser>=3.0",
-  "sphinx-sitemap>=2.7,<3",
-]
+docs = ["sphinx>=7.4,<9", "furo>=2024.8.6", "sphinx-autodoc-typehints>=2.3", "myst-parser>=3.0"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
