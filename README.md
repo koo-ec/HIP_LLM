@@ -6,6 +6,7 @@
 [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](pyproject.toml)
 [![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.ress.2026.112615-blue)](https://doi.org/10.1016/j.ress.2026.112615)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19H582xYhuThqVFcZQzgwEa-vv_XeuJZQ?usp=sharing)
 
 A tested implementation and replication package for:
 
